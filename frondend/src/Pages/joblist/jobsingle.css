@@ -1,0 +1,26 @@
+.job__details {
+  margin-top: 66px;
+}
+.job__details-header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 36px;
+  color: white;
+  height: 200px;
+  background: var(--pr-color);
+}
+.job__details-container {
+  display: flex;
+}
+.job__details-container__left {
+  flex: 2;
+}
+.job__details-container__left-description {
+  color: rgb(25, 25, 25);
+}
+.job__details-side {
+  display: flex;
+  flex: 1;
+}/*# sourceMappingURL=jobsingle.css.map */

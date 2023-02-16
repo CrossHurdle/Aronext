@@ -1,0 +1,276 @@
+.Student-Myprofile .ant-tabs > .ant-tabs-nav .ant-tabs-nav-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+/**Personal Information**/
+.Stud-personal-head {
+  display: flex;
+  justify-content: center;
+}
+.Stud-personal-col {
+  width: 100%;
+}
+.Stud-personal-form {
+  display: flex;
+  flex-direction: column;
+}
+.Stud-personal-error {
+  color: red;
+}
+.Stud-personal-radio {
+  display: flex;
+  justify-content: space-evenly;
+}
+.Stud-personal-input {
+  width: 100%;
+  height: 40px;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem !important;
+  border: 1px solid #ced4da !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+.Stud-personal-btn {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 3%;
+}
+.Stud-personal-btns {
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  color: white;
+}
+.Stud-personal-submit {
+  background-color: #1a64c4ea;
+  padding: 5px 10px;
+}
+.Stud-personal-cancel {
+  background-color: rgb(110, 107, 107);
+  padding: 5px 10px;
+}
+.Stud-personal-submit:hover {
+  background-color: #31531e;
+}
+.Stud-personal-cancel:hover {
+  background-color: rgb(145, 16, 16);
+}
+
+/**Qualification Information**/
+.Stud-qual-head {
+  display: flex;
+  justify-content: center;
+}
+// .gender-checkbox , .marital-checkbox{
+//   font-weight: 600;
+// }
+.Stud-qual-col {
+  width: 100%;
+}
+.Stud-qual-form {
+  display: flex;
+  flex-direction: column;
+}
+.Stud-qual-error {
+  color: red;
+}
+.Stud-qual-radio {
+  display: flex;
+  justify-content: space-evenly;
+}
+.Stud-qual-input {
+  width: 100%;
+  height: 40px;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem !important;
+  border: 1px solid #ced4da !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+.Stud-qual-btn {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 3%;
+}
+.Stud-qual-btns {
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  color: white;
+}
+.Stud-qual-submit {
+  background-color: #1a64c4ea;
+  padding: 5px 10px;
+}
+.Stud-qual-cancel {
+  background-color: rgb(110, 107, 107);
+  padding: 5px 10px;
+}
+.Stud-qual-submit:hover {
+  background-color: #31531e;
+}
+.Stud-qual-cancel:hover {
+  background-color: rgb(145, 16, 16);
+}
+.Stud-qual-table {
+  display: flex;
+  flex-direction: column;
+  overflow-x: scroll;
+}
+.Stud-qual-table::-webkit-scrollbar {
+  width: 5px;
+  background-color: transparent;
+}
+
+/**Semester Score**/
+.addbutton {
+  border-radius: 8px;
+  border: none;
+  background-color: #1890ff;
+  box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.603);
+  color: white;
+  padding: 5px;
+}
+.Stud-sem-head {
+  display: flex;
+  justify-content: center;
+}
+.Stud-sem-col {
+  width: 100%;
+}
+.Stud-sem-input {
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #ced4da;
+  outline: none;
+}
+.Stud-sem-addbtn {
+  border-radius: 5px;
+  border: none;
+  color: white;
+  background-color: #06468f;
+  box-shadow: 0px 1px 1px 1px #414040;
+}
+.Stud-sem-btn {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 3%;
+}
+.Stud-sem-btns {
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  color: white;
+}
+.Stud-sem-submit {
+  background-color: #1a64c4ea;
+  padding: 5px 10px;
+}
+.Stud-sem-cancel {
+  background-color: rgb(110, 107, 107);
+  padding: 5px 10px;
+}
+.Stud-sem-submit:hover {
+  background-color: #31531e;
+}
+.Stud-sem-cancel:hover {
+  background-color: rgb(145, 16, 16);
+}
+
+/**AREA INTEREST **/
+.Stud-aresint-head {
+  display: flex;
+  justify-content: center;
+}
+.Stud-aresint-col {
+  width: 100%;
+}
+.Stud-aresint-input {
+  width: 100%;
+  height: 40px;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem !important;
+  border: 1px solid #ced4da !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+.Stud-aresint-btn {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 3%;
+}
+.Stud-aresint-btns {
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  color: white;
+}
+.Stud-aresint-submit {
+  background-color: #1a64c4ea;
+  padding: 5px 10px;
+}
+.Stud-aresint-cancel {
+  background-color: rgb(110, 107, 107);
+  padding: 5px 10px;
+}
+.Stud-aresint-submit:hover {
+  background-color: #31531e;
+}
+.Stud-aresint-cancel:hover {
+  background-color: rgb(145, 16, 16);
+}
+
+/**BLOG**/
+.Stud-blog-head {
+  display: flex;
+  justify-content: center;
+}
+.Stud-blog-col {
+  width: 100%;
+}
+.Stud-blog-input {
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #ced4da;
+  outline: none;
+}
+.Stud-blog-addbtn {
+  border-radius: 5px;
+  border: none;
+  color: white;
+  background-color: #06468f;
+  box-shadow: 0px 1px 1px 1px #414040;
+}
+.Stud-blog-btn {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 3%;
+}
+.Stud-blog-btns {
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  color: white;
+}
+.Stud-blog-submit {
+  background-color: #1a64c4ea;
+  padding: 5px 10px;
+}
+.Stud-blog-cancel {
+  background-color: rgb(110, 107, 107);
+  padding: 5px 10px;
+}
+.Stud-blog-submit:hover {
+  background-color: #31531e;
+}
+.Stud-blog-cancel:hover {
+  background-color: rgb(145, 16, 16);
+}

@@ -1,0 +1,22 @@
+.ant-layout.ant-layout-has-sider > .ant-layout,
+.ant-layout.ant-layout-has-sider > .ant-layout-content {
+  width: 0;
+  background-color: white;
+}
+
+.special {
+  display: flex;
+}
+
+/* .layout-side {
+  position: fixed;
+  top: 0;
+  left: 0;
+} */
+.ourprofile_wrap {
+  /* width: 100%; */
+}
+.contdef {
+  /* width: calc(100% - 200px);  */
+  /* margin-left: 200px; */
+}

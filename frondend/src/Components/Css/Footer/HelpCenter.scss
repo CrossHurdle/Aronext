@@ -1,0 +1,104 @@
+.HelpCenter-main{
+    margin-top: 5%;
+}
+.HelpCenter-First{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(90deg, #00caff 41%, #4200ff 100%);
+    height: 45vh;
+}
+.HelpCenter-Header{
+    color: #ffffff;
+}
+.HelpCenter-Search .ant-input-search > .ant-input-group > .ant-input-group-addon:last-child {
+    left: -5px;
+    background-color: #06035f;
+    border-radius: 0px 8px 8px 0px;
+    font-size: 20px !important;
+}
+.HelpCenter-Search .ant-input-search > .ant-input-group > .ant-input-group-addon:last-child .ant-input-search-button {
+    padding-bottom: 10px;
+    height: 50px;
+    width: 70px;
+    background-color: #06035f;
+    border: none;
+    font-size: 25px;
+    border-radius: 0px 8px 8px 0px;
+}
+.HelpCenter-Search .ant-input-group > .ant-input:first-child{
+    height: 50px;
+}
+.HelpCenter-Second{
+    background-image: url("../../../assets/helpcenter.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+}
+.HelpCenter-Sec-one{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 30vh;
+}
+.HelpCenter-Cols{
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
+    scrollbar-width: 0px;
+    margin: 0% 6%;
+}
+.HelpCenter-Cols::-webkit-scrollbar {
+    // display: none;
+    width:100%;
+}
+.HelpCenter-Col{
+    display: flex;
+    border-right: 2px solid gray;
+}
+.HelpCenter-Q{
+    color: #00caff;
+    margin: 0% 4%;
+}
+.HelpCenter-Para{
+    color: #ffffff;
+    width: 280px;
+}
+.HelpCenter-Card-Row{
+    margin: 4%;
+    display: flex;
+    justify-content: center;
+}
+.HelpCenter-Card{
+    width: 175px;
+    height: 175px;
+    margin: auto;
+    display: inline-block;
+    padding: 2.5em 0;
+    text-align: center;
+    cursor: pointer;
+    color: #006cb7 ;
+    background-color: #eee;
+    box-shadow: 4px 4px 4px rgb(0 0 0 / 20%);
+}
+.HelpCenter-Card:hover{
+    color: #ffffff;
+    background-color: #006cb7;
+}
+.Icon-para{
+    margin-top: 5%;
+    font-weight: bold;
+}
+@media (min-width:100px) and (max-width:320px) {
+    .HelpCenter-main{
+        margin-top: 25%;
+    }
+}
+@media (min-width:992px) and (max-width:1250px) {
+    .HelpCenter-Card{
+        width: 140px;
+    }
+}

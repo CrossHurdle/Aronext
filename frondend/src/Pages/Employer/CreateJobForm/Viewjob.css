@@ -1,0 +1,10 @@
+@media (max-width: 1023px) {
+    .view-input{
+        width: 100px;
+        margin-left: 50px;
+    }
+    .view-row {
+        --bs-gutter-x: 6rem !important;
+    }
+    
+  }

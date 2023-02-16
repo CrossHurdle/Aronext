@@ -1,0 +1,120 @@
+.Project-main {
+  padding: 2rem;
+}
+.Project-row {
+  padding: 1rem;
+}
+.Project-col {
+  padding: 1rem;
+}
+.Int-popular-head {
+  display: flex;
+  justify-content: center;
+}
+.Int-col {
+  width: 100%;
+}
+.Inttitle {
+  text-align: center;
+  margin-top: 5%;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 5px 20px;
+  border: 1px solid #e6e2e2;
+  cursor: pointer;
+  transition-duration: 0.4s;
+  font-size: small;
+  font-weight: 600;
+  color: rgb(85, 81, 81);
+}
+.Inttitle:hover {
+  box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.24), 0 8px 25px 0 rgba(0, 0, 0, 0.19);
+}
+.Int-card-image {
+  width: 100%;
+  height: 20vh;
+}
+.Int-card {
+  cursor: pointer;
+  transition-duration: 0.4s;
+  font-weight: 600;
+  color: rgb(85, 81, 81);
+  border: 1px solid #e6e2e2;
+  border-radius: 8px;
+}
+.Int-card:hover {
+  box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.24), 0 8px 25px 0 rgba(0, 0, 0, 0.19);
+}
+.Int-card-image2 {
+  width: 100%;
+  height: 35vh;
+  border-top-left-radius: 8px !important;
+  border-top-right-radius: 8px !important;
+}
+.Int-para1 {
+  background-color: #d9d9d9;
+  width: 12rem;
+  padding-left: 2%;
+}
+.Project-para-content {
+  display: flex;
+}
+.Int-para2 {
+  gap: 0.3rem;
+  display: flex;
+  padding-right: 0.5rem;
+  margin-bottom: 0;
+  align-items: center;
+}
+.Project-body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@media (min-width: 100px) and (max-width: 500px) {
+  .Project-main {
+    padding: 0;
+  }
+  .Project-row {
+    padding: 0;
+    display: flex;
+    justify-content: center;
+  }
+  .Project-col {
+    padding: 0.2rem;
+    margin-bottom: 1rem;
+  }
+  .Project-para-content {
+    display: block;
+  }
+  .Project-body {
+    display: block;
+  }
+  .Project-btns {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+  }
+}
+@media (min-width: 500px) and (max-width: 800px) {
+  .Project-row {
+    padding: 0;
+  }
+  .Project-col {
+    padding: 0.2rem;
+    margin-bottom: 1rem;
+  }
+  .Project-body {
+    display: block;
+  }
+  .Project-btns {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+  }
+}
+.pages-title-approved{
+color: green;
+}
+

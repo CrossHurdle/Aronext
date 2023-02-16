@@ -1,0 +1,84 @@
+.jobscard {
+  padding:5%;
+    margin-top: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    // height: 90% !important;
+    border-radius: 12px !important;
+    cursor: pointer;
+    // transition-duration: 0.4s;
+    box-shadow: 0 6px 6px 0 rgba(0, 0, 0, 0.24);
+  }
+  .Datacardrow{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
+  .Datacardcol {
+    padding: 1%;
+}
+.save-icon{
+    display: flex;
+    justify-content: flex-end;
+}
+.DescriptionBox {
+  width: 100%;
+  height: 25vh; // experiment with this value, try changing to 110vh
+  min-height: 400px;
+  overflow: auto;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 25%;
+  margin-top: 3%;
+}
+.descriptionTab{
+display: flex;
+align-items: flex-end;
+justify-content: flex-end;
+
+}
+.applyButton{
+height: 30px;
+
+}
+
+.DescriptionBox {
+  // border: 5px solid #222;
+  // background-color: white;
+  border-radius: 12px;
+  // color: #222;
+  padding: 15px;
+  box-shadow: 0 12px 12px 0 rgba(0, 0, 0, 0.24);
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.job-search1 {
+  width: 25%;
+  text-indent: 20px;
+  outline: none;
+  border-radius: 10px 0px 0px 10px !important;
+  height: 30px;
+}
+.job-search2 {
+  width: 25%;
+  text-indent: 20px;
+ 
+  outline: none;
+  border-radius: 0px 10px 10px 0px !important;
+  height: 30px;
+}
+.jobsearchbox .fa-search {
+  position: absolute;
+  top: 20px;
+  left: 16px;
+}
+.jobsearchbutton{
+  height: 30px;
+  box-shadow: none;
+}
+

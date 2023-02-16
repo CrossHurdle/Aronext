@@ -1,0 +1,24 @@
+.Company-title {
+    font-size: 25px;
+    font-weight: 500;
+  }
+  
+  .Company-error {
+    color: red;
+  }
+  
+  .Company-input {
+    border: 1px solid #9a8f8f;
+    border-radius: 7px !important;
+    height: 35px;
+  }
+  
+  .Company-input::selection {
+    border: 1px solid grey !important;
+  }
+  
+  .Company-textArea {
+    padding: 1px !important;
+    border-radius: 2px !important;
+    height: 90px;
+  }

@@ -1,0 +1,71 @@
+.ourprofile_container {
+  /* max-width: 60%; */
+  margin: 0 auto;
+  padding: 50px;
+  max-height: auto;
+}
+
+.radiogrp {
+  display: flex;
+  flex-wrap: wrap;
+}
+.radiogrp1 {
+  display: flex;
+  flex-wrap: wrap;
+  width: 500px;
+}
+
+.btncenter {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.btncenter button {
+  margin-right: 15px;
+  margin-bottom: 15px;
+}
+.ant-form-item-label > label {
+  min-width: 120px;
+  font-size: 14px;
+}
+
+@media (max-width: 940px) {
+  .radiogrp1 {
+    width: 400px;
+  }
+  /* .hh:has(.ff) {
+  }
+
+  .ourprofile_container {
+  }
+  .ant-form-item-label > label {
+  } */
+}
+
+@media (max-width: 840px) {
+  .radiogrp1 {
+    width: 300px;
+  }
+}
+
+@media (max-width: 725px) {
+  .radiogrp1 {
+    width: unset;
+  }
+}
+
+.checkbox_outer {
+  display: flex;
+}
+.checkbox_center {
+  margin: 10px auto;
+}
+
+.ourprofile_wrap {
+  width: 100%;
+  /* max-width: 70%; */
+  /* margin-inline: auto; */
+  /* margin-left: 200px; */
+  background-color: rgba(139, 135, 135, 0.089);
+  overflow-y: none;
+}

@@ -1,0 +1,68 @@
+.crosshurdle {
+  height: 40px;
+  width: 220px;
+  cursor: pointer;
+}
+
+.navtitle {
+  color: white;
+  font-size: 18px;
+}
+
+.btn-nav {
+  background-color: white;
+  color: black;
+  border-radius: 15px;
+}
+
+.navtitle:hover {
+  padding-top: 2px;
+  color: white;
+  border-bottom: 1px solid #ffffff;
+  border-radius: 1px;
+  color: black;
+  text-decoration: none !important;
+  background-color: #acacac !important;
+}
+
+// .navtitle .active{
+//   color: red;
+// }
+
+.navfix {
+  background-image: linear-gradient(#42424a, #191919);
+  // position: fixed;
+  // top: 0;
+  // width: 100%;
+  // z-index: 2000;
+}
+
+.icon-style {
+  color: white !important;
+  vertical-align: 0px !important;
+  margin: 0px 30px 0px 30px !important;
+}
+.nav-link {
+  color: white !important;
+}
+.toggle-btn {
+  background-color: white !important;
+}
+
+@media (max-width: 395.98px) {
+  .icon-style {
+    color: white !important;
+    vertical-align: 0px !important;
+    margin: 0px 20px 0px 10px !important;
+  }
+  .crosshurdle {
+    height: 30px;
+    width: 85%;
+    cursor: pointer;
+  }
+}
+@media (min-width: 992px) {
+  .navbar-expand-lg .navbar-collapse {
+    justify-content: flex-end !important;
+  }
+}

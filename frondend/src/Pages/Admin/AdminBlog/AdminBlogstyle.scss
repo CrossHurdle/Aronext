@@ -1,0 +1,57 @@
+.Blog-title {
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.Blog-error {
+  color: red;
+}
+
+.Blog-input {
+  border: 1px solid #9a8f8f;
+  border-radius: 7px !important;
+  height: 35px;
+}
+
+.Blog-input::selection {
+  border: 1px solid grey !important;
+}
+
+.Blog-textArea {
+  padding: 1px !important;
+  border-radius: 2px !important;
+  height: 90px;
+}
+
+.ant-select:not(.ant-select-customize-input) .ant-select-selector {
+  position: relative;
+  height: 35px !important;
+  background-color: #fff;
+  // border: 1px solid grey !important;
+  border-radius: 7px;
+  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  outline: none !important;
+}
+
+.question-add-button {
+  margin-top: 5px;
+  margin-right: 10px;
+  padding: 7px;
+  background-color: rgba(13, 169, 253, 0.831372549) !important;
+  color: white !important;
+  border-radius: 20px !important;
+  border: none !important;
+  width: 100px;
+}
+
+.question-remove-button {
+  margin-top: 5px;
+  padding: 7px;
+  background-color: rgba(253, 13, 13, 0.823) !important;
+  color: white !important;
+  border-radius: 20px !important;
+  border: none !important;
+  width: 100px;
+}
+
+

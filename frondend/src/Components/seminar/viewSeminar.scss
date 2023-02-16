@@ -1,0 +1,97 @@
+.inner_container_wrap {
+  margin: 0 auto;
+  padding: 1.5rem;
+  border-radius: 2px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  opacity: 0.86;
+  // transition: 0.4s all;
+  transition: all 0.2s;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  background-color: rgba(8, 56, 112, 0.05);
+  border: 0.05px solid #083871;
+  h4 {
+    margin: unset;
+  }
+}
+
+.inner_container_wrap:hover {
+  opacity: 1;
+  transform: translateY(-0.25rem);
+}
+
+.padcheck div {
+  flex: 1;
+}
+
+.seminar_card_title {
+  font-weight: 500;
+}
+.seminar_card_date {
+  margin-left: auto;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.seminar_card_date span:first-of-type {
+  margin-right: 10px;
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  .seminar_card_contact {
+    margin-left: auto;
+    max-width: 240px;
+  }
+}
+
+.seminar_card_button_wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  .seminar_card_button {
+    background-color: rgba(128, 128, 128, 0.8) !important;
+    display: block;
+  }
+  .seminar_card_button:first-of-type {
+    background-color: rgba(8, 56, 118, 0.9) !important;
+  }
+}
+
+.seminar_card_button {
+  padding: 5px 10px;
+  border: 0;
+}
+
+.seminar_card_technlogies {
+  span {
+    background-color: rgb(211, 190, 158);
+    max-width: 100%;
+    padding: 1px 5px;
+    font-size: 0.75rem;
+    border-radius: 3px;
+    margin-right: 5px;
+  }
+
+  span:first-child {
+    background-color: rgb(179, 195, 202);
+  }
+}
+
+.seminar_card_brief_des {
+  font-size: 1.25rem;
+}
+
+.seminar_card_link {
+  font-size: 1.05rem;
+}
+
+.padcheck {
+  padding: 30px;
+  gap: 40px;
+}

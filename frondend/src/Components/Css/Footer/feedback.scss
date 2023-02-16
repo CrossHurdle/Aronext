@@ -1,0 +1,87 @@
+.feedback-main {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  
+}
+.feedback-card {
+  width: 45%;
+  height: fit-content !important;
+  height: 100vh;
+}
+.feedback-card {
+  width: 45%;
+  height: fit-content;
+  display: flex;
+  justify-content: left;
+  margin-top: 6%;
+  border-radius: 20px;
+  box-shadow: 0 5px 8px 0px rgb(0 0 0 / 17%);
+}
+.feedback-label {
+  width: 50%;
+}
+.feedback-label1 {
+  width: 70%;
+}
+
+.feedback-input-filed1 {
+  width: 90%;
+  border-radius: 10px !important;
+  background-color: #f6f6f6;
+}
+.feedback-input-fileds {
+  width: 90%;
+  border-radius: 10px !important;
+  height: 130px;
+  background-color: #f6f6f6;
+}
+.error-text {
+  width: 100%;
+  color: red;
+  font-size: small;
+  position: absolute;
+}
+.error-texts {
+  width: 100%;
+  color: red;
+  font-size: small;
+  margin-top: -30px;
+}
+.feedback-input-button {
+  width: 50%;
+  border-radius: 20px;
+}
+.feedback-input-filed-screenshot {
+  width: 90%;
+}
+
+@media (min-width: 320px) and (max-width: 426px) {
+  .feedback-card {
+    width: 95%;
+    height: 100vh;
+    margin-top: 36%;
+  }
+  .feedback-input-filed {
+    width: 74%;
+  }
+  .feedback-label {
+    width: 70%;
+  }
+  .feedback-input-fileds {
+    width: 70%;
+    border-radius: 20px;
+  }
+  .feedback-label1 {
+    width: 89%;
+  }
+  .feedback-main {
+    height: 150vh;
+  }
+  // .error-text {
+  //   width: 62%;
+  // }
+  // .error-texts {
+  //   width: 60%;
+  // }
+}

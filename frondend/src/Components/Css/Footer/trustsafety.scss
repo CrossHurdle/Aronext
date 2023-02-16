@@ -1,0 +1,146 @@
+.trust-main-div {
+  background: #1a69c5;
+  margin-top: 73px;
+  height: 64vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.alert-main-div {
+  margin-top: 70px;
+  height: 35vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.paragraph-alert-div {
+  width: 90%;
+}
+.alert-second-div {
+  background-image: linear-gradient(
+    90deg,
+    #213449 30%,
+    #094f82 80%,
+    #063354 170%
+  );
+  padding: 1.5rem !important;
+  color: white;
+}
+.alert-list {
+  list-style-type: none;
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  -ms-flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+  padding-left: 0;
+  margin-bottom: 0;
+  margin-left: 5%;
+  color: white;
+}
+.list-item {
+  position: relative;
+  padding: 0.75rem 1.25rem;
+  margin-bottom: -1px;
+  font-size: 16px;
+}
+.alert-second-main {
+  color: white;
+}
+.google-contents {
+  border: 1px solid black !important;
+  width: 50% !important ;
+  border-radius: 23px;
+  // margin-left: 150px;
+  margin-top: 20px;
+  background: none;
+}
+.google-contents-div {
+  border: 1px solid black;
+  padding: 14px;
+  position: relative;
+  top: 20px;
+  left: 45px;
+  text-decoration: none !important;
+  border-radius: 13px;
+}
+
+.google-spans {
+  margin-left: 56px;
+  color: #757575;
+  font-family: Roboto;
+  font-size: 14px;
+  letter-spacing: 0.4px;
+  line-height: 16px;
+  text-align: left;
+  text-decoration: none !important;
+}
+.google-icons {
+  width: 18px;
+  height: 18px;
+  margin: 11px 11px 11px 16px;
+  background-size: 18px 18px;
+  // margin-left: 20px;
+}
+.trust-contents {
+  border-radius: 20px;
+  color: black !important;
+  width: 140%;
+  height: 500px;
+  border-radius: 12px !important;
+}
+.ant-divider-inner-text {
+  display: inline-block;
+  padding: 0 1em;
+  position: relative;
+  top: 0px;
+}
+.button-div {
+  display: flex;
+  margin: auto;
+}
+.search-div {
+  width: 40%;
+}
+.para-div {
+  color: white;
+}
+
+@media (min-width: 320px) and (max-width: 426px) {
+  .alert-main-div {
+    margin-top: 140px;
+  }
+  .alert-second-div {
+    margin-top: 25px;
+  }
+  .paragraph-div {
+    display: block !important;
+  }
+  .trust-contents {
+    width: 100%;
+  }
+  .google-spans {
+    margin-left: -6px;
+  }
+  .google-contents-div {
+    border: 0px solid black;
+    padding: 0px;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    text-decoration: none !important;
+    border-radius: 13px;
+  }
+  .search-div {
+    width: 95%;
+  }
+  .para-div {
+    color: white;
+    width: 83%;
+  }
+}

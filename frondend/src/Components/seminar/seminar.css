@@ -1,0 +1,14 @@
+.seminarSelect {
+  width: 100%;
+  border-radius: 5px;
+  height: 37px;
+}
+
+.seminarInput {
+  width:100%;
+  display: flex;
+}
+.input-field2 {
+  width: 100%;
+  display: flex;
+}

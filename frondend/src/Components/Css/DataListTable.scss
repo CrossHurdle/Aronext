@@ -1,0 +1,15 @@
+.Table-top {
+    background-color: #80808075!important;
+    border-radius: 15px 15px 0 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 1rem;
+    width: 100%;
+}
+.Datalist-Table .ant-table-thead > tr > th {
+  background-color: #80808075;
+  text-align: center;
+}
+.Datalist-Table .ant-table-tbody > tr > td {
+ text-align: center;
+}

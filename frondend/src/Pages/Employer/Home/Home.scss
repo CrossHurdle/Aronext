@@ -1,0 +1,14 @@
+.employercard {
+    margin-top: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    border-radius: 6px 20px !important;
+    cursor: pointer;
+    transition-duration: 0.4s;
+    background-color: #f1f6f8;
+}
+
+.partnercard:hover {
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24);
+  }

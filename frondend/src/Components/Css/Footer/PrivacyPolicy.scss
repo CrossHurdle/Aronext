@@ -1,0 +1,22 @@
+.PrivacyMain{
+    background-color: #500f0214;
+    padding: 3% 10%;
+    margin-top: 5%;
+  }
+  .PrivacyCard {
+    padding: 24px 15px;
+    background-color: white;
+    box-shadow: 0 4px 17px rgba(9, 9, 9, 0.35);
+    border-radius: 5px;
+  }
+  .PrivacyPara {
+    font-size: 16px;
+    text-align: justify;
+    text-indent: 5%;
+  }
+  @media (min-width: 200px) and (max-width: 500px) {
+    .PrivacyMain{
+      padding: 3% 1%;
+    }
+  }
+  

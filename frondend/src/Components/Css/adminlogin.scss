@@ -1,0 +1,35 @@
+.admin-login-card {
+  margin-top: 10% !important;
+  width: 40%;
+  height: 70vh;
+  box-shadow: 0 0 40px rgb(51 51 51 / 10%);
+}
+.admin_input {
+  width: 60%;
+}
+.admin_label {
+  margin-right: auto;
+  font-weight: bold;
+  font-size: 20px;
+}
+.admin_button {
+  width: 60%;
+  height: 35px;
+}
+.admin-main {
+  overflow-y: hidden !important;
+}
+
+@media (min-width: 320px) and (max-width: 426px) {
+  .admin-login-card {
+    margin-top: 25% !important;
+    width: 100%;
+    height: 73vh;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .admin-login-card {
+    width: 60%;
+  }
+}

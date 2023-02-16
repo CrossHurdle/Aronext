@@ -1,0 +1,50 @@
+.project-main{
+    width:90%;
+    height:40vh;
+    margin-top:40px;
+}
+/* .table-action{
+    background-color: grey;
+} */
+
+.btn-invite{
+    text-decoration: none;
+    color: white;
+}
+
+.project-input{
+    width:80% !important;
+    border-radius:5px;
+     border: 1px solid #120bdb38;
+    height: 37px;
+    outline: none;
+}
+.input-date{
+    width:80% !important;
+    border-radius:5px;
+     border: 1px solid #120bdb38;
+    height: 37px;
+    outline: none; 
+}
+.input-modal{
+    text-align: right;
+    margin-right: 10px;
+}
+.text-reject{
+    width:80%;
+    border-radius:5px;
+     border: 1px solid #120bdb38;
+    outline: none;
+    height:15vh;
+}
+/* .table-action{
+    border-radius: 20px;
+} */
+
+.ant-table table,.ant-table-wrapper{
+    background-color: #87808033;
+    border-radius: 5px;
+}
+.ant-table-thead > tr > th {
+    background-color: #80808075;
+}

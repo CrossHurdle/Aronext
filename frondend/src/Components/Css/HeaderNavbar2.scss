@@ -1,0 +1,33 @@
+
+.feril_logo2 {
+  height: 40px;
+  width: 140px;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 425px) {
+  .feril_logo2 {
+    width: 120px;
+    height: 40px;
+  }
+}
+
+
+
+
+
+
+// .logoutbutton {
+//   border-radius: 30px !important;
+//   background-color: var(--pr-color-light) !important;
+//   color: white !important;
+//   --bs-btn-border-color: none !important;
+//   display: flex;
+//   justify-content: end;
+// }
+// .loginbutton:hover {
+//   box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+//     0 17px 50px 0 rgba(0, 0, 0, 0.19);
+// }
+
+

@@ -1,0 +1,50 @@
+.Contactimg {
+    background-image: url("../../assets/contact.jpg");
+    min-height: 40vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow-y: hidden;
+  }
+  .ContactSecond {
+    height: 40vh;
+    background: #297bde56;
+  }
+  .ContactContent {
+    margin: auto;
+    display: block;
+    text-align: center;
+    color: white;
+    transform: translateY(50px);
+  }
+  .ContactHead {
+    font-size: 30px;
+    font-weight: 700;
+    color: white;
+  }
+  @media only screen and (max-width: 767px) {
+      .Contactsideimg {
+        display: none !important;
+      }
+    }
+  .Contactsideimg {
+    background-image: url("../../assets/contactus.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-top: -12%;
+    min-height: 120vh;
+    overflow-y: hidden;
+  }
+  .ContsecConatiner {
+    border-radius: 5px;
+    display: block;
+    background: white;
+    box-shadow: 0px 0px 2px 2px #a4a0a0;
+    padding: 5%                                   ;
+  }
+  .ContactSecHead {
+    font-size: 30px;
+    font-weight: 700;
+    color: #2a80b9;
+  }
+  

@@ -1,0 +1,17 @@
+.job__details-side_first {
+    width: 100%;
+    background: rgba(8, 56, 113, 0.1);
+    padding: 1rem;
+
+    &-content {
+        display: flex;
+        flex-direction: column;
+
+        &_list {
+            gap: 1rem;
+            display: flex;
+
+            &-data {}
+        }
+    }
+}

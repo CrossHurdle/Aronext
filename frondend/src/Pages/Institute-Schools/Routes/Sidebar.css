@@ -1,0 +1,127 @@
+.main-content {
+  padding-top: 70px;
+}
+.main-content.open {
+  margin-left: 210px;
+  max-width: calc(100% - 200px);
+  min-height: calc(100vh - 70px);
+}
+
+@media screen and (max-width: 767.98px) {
+  .main-content.open {
+    margin-left: 0px;
+    max-width: calc(100% - 0px);
+    padding: 0px;
+  }
+}
+.sidebarcontent.open {
+  width: 210px !important;
+  background-image: linear-gradient(#42424a, #191919);
+  height: 100vh;
+  position: fixed;
+  top: 0px;
+  z-index: 2;
+}
+
+.sidebarcontent.open .nav-list {
+  display: block;
+  top: 60px;
+  position: relative;
+  overflow: auto;
+  height: calc(100vh - 7px);
+  overflow-y: scroll;
+  padding: 10px 0px 10px 0px;
+}
+
+.sidebarcontent.open .nav-list::-webkit-scrollbar-thumb {
+  background-color: rgb(179, 178, 178);
+  border-radius: 5px;
+}
+.sidebarcontent.open .nav-list ::-webkit-scrollbar-track {
+  -webkit-box-shadow: none !important;
+  background-color: transparent;
+}
+.sidebarcontent.open .nav-list::-webkit-scrollbar {
+  width: 5px;
+  background-color: transparent;
+}
+
+.sidebarcontent.open a {
+  display: block;
+  color: white;
+  font-size: 14px;
+  padding: 16px 10px 16px 20px;
+  margin: 0px 10px;
+  text-decoration: none !important;
+  margin-bottom: 3px;
+  width: -webkit-fill-available;
+}
+
+.sidebarcontent.open a:hover {
+  display: block;
+  font-size: 14px;
+  padding: 16px 10px 16px 20px !important;
+  margin: 0px 10px;
+  margin-bottom: 3px;
+  color: black;
+  text-decoration: none !important;
+  background-color: #acacac !important;
+  border-radius: 8px !important;
+  width: -webkit-fill-available;
+}
+
+/* .active{
+  color:black;
+  text-decoration: none;
+  background-color: #acacac !important;
+  border-radius: 8px !important;
+} */
+.Nav-Icon {
+  font-size: 14px;
+  margin-right: 5%;
+}
+.menu-drop {
+  border-radius: 10px;
+}
+
+/* SIDEBAR DROPDOWN */
+.submenu {
+  font-size: 2px;
+}
+
+.side-drop {
+  font-size: x-small;
+  font-family: inherit;
+  font-weight: 50;
+}
+.main-nav-style {
+  font-size: 14px;
+}
+.main-nav-style,
+.submenu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.main-nav-style label {
+  display: block;
+  text-decoration: none;
+  padding: 10px;
+  color: white;
+}
+
+.main-nav-style input {
+  display: none;
+}
+
+.main-nav-style :checked + .submenu {
+  display: block;
+  max-height: 200px;
+}
+
+.submenu {
+  overflow: hidden;
+  max-height: 0;
+  transition: all 0.5s ease-out;
+}
