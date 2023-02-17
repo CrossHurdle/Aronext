@@ -95,6 +95,7 @@ function ProfessionalSignup(props) {
 
   const handleFormSubmit = async () => {
     let userDetails = {
+      role: "professional",
       firstName: getValues().firstName,
       LastName: getValues().lastName,
       email: getValues().mail,

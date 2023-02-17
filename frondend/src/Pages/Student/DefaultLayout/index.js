@@ -21,18 +21,18 @@ function DefaultLayout() {
   const UserName = localStorage.getItem("name");
   console.log("UserName", UserName);
   const [logout, setLogout] = React.useState(false);
-  React.useEffect(() => {
-    if (!localStorage.getItem("USER_AUTH_STATE")) navigate("/login");
-  }, [logout]);
-  const logoutHandler = (e) => {
-    e.preventDefault();
-    localStorage.removeItem("USER_AUTH_STATE");
-    localStorage.removeItem("role");
-    localStorage.removeItem("id");
-    localStorage.removeItem("name");
-    localStorage.removeItem("stu-token");
-    setLogout(true);
-  };
+  // React.useEffect(() => {
+  //   if (!localStorage.getItem("USER_AUTH_STATE")) navigate("/login");
+  // }, [logout]);
+  // const logoutHandler = (e) => {
+  //   e.preventDefault();
+  //   localStorage.removeItem("USER_AUTH_STATE");
+  //   localStorage.removeItem("role");
+  //   localStorage.removeItem("id");
+  //   localStorage.removeItem("name");
+  //   localStorage.removeItem("stu-token");
+  //   setLogout(true);
+  // };
   return (
     <div>
       <div onChange={handleChange}>
@@ -52,7 +52,7 @@ function DefaultLayout() {
                 onClick={() => navigate("/")}
               />
             </div>
-            <div onClick={logoutHandler}>
+            <div>
               <Link to="/login" className="navMenus">
                 Logout
               </Link>

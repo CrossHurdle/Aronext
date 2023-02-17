@@ -16,23 +16,23 @@ const HeaderNavbar = () => {
 
   const role = localStorage.getItem("role");
   const groupName = localStorage.getItem("Group_Name");
-  const auth = localStorage.getItem("USER_AUTH_STATE");
-  const logoutHandler = (e) => {
-    e.preventDefault();
-    localStorage.removeItem("USER_AUTH_STATE");
-    localStorage.removeItem("role");
-    localStorage.removeItem("id");
-    localStorage.removeItem("name");
-    localStorage.removeItem("token");
-    localStorage.removeItem("emplo-token");
-    localStorage.removeItem("email");
-    localStorage.removeItem("stu-token");
-    localStorage.removeItem("pro-token");
-    localStorage.removeItem("institute-token");
-    localStorage.removeItem("college-token");
+  // const auth = localStorage.getItem("USER_AUTH_STATE");
+  // const logoutHandler = (e) => {
+  //   e.preventDefault();
+  //   localStorage.removeItem("USER_AUTH_STATE");
+  //   localStorage.removeItem("role");
+  //   localStorage.removeItem("id");
+  //   localStorage.removeItem("name");
+  //   localStorage.removeItem("token");
+  //   localStorage.removeItem("emplo-token");
+  //   localStorage.removeItem("email");
+  //   localStorage.removeItem("stu-token");
+  //   localStorage.removeItem("pro-token");
+  //   localStorage.removeItem("institute-token");
+  //   localStorage.removeItem("college-token");
 
-    setLogout(true);
-  };
+  //   setLogout(true);
+  // };
   return (
     <div>
       <Navbar className="nav-brand">
@@ -48,19 +48,19 @@ const HeaderNavbar = () => {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="collapse-style me-2 ">
-              {(auth && role === "student") ||
+              {/* {(auth && role === "student") ||
               (auth && role === "Employee") ||
               (auth && role === "Employer") ||
               (auth && role === "institute") ||
               (auth && role === "college") ||
-              (auth && role === "admin") ? (
-                <Popover
+              (auth && role === "admin") ? ( */}
+              {/* <Popover
                   content={
                     <div>
                       <Nav.Link>Dashboard</Nav.Link>
                       <hr />
                       <Nav.Link>
-                        <NavLink onClick={logoutHandler}>LogOut</NavLink>
+                        <NavLink>LogOut</NavLink>
                       </Nav.Link>
                     </div>
                   }
@@ -72,16 +72,16 @@ const HeaderNavbar = () => {
                     onClick={() => setOpen(!open)}
                   />
                 </Popover>
-              ) : (
-                <Nav.Link>
-                  <Link className="navbartitle p-3" to="/login">
-                    Login
-                  </Link>
-                  <Link to="/signup" className="navbartitle p-3">
-                    Signup
-                  </Link>
-                </Nav.Link>
-              )}
+              ) : ( */}
+              <Nav.Link>
+                <Link className="navbartitle p-3" to="/login">
+                  Login
+                </Link>
+                <Link to="/signup/Student" className="navbartitle p-3">
+                  Signup
+                </Link>
+              </Nav.Link>
+              {/* )} */}
               {/* <Link className="navbartitle p-3" to="/login">
                 Login
               </Link>
