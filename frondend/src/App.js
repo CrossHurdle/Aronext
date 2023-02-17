@@ -40,9 +40,10 @@ import Site from "./Components/Footer/SiteMap/Site";
 import Career from "./Components/Footer/Career/Career";
 import Client from "./Components/Footer/Clients/Client";
 import Dashboard from "./Pages/Admin/Dashboard/AdminSidebar";
-import ProtectedRoute from "./Routes/ProtectedRoute";
 import BgvRoutes from "./Routes/BgvRoutes";
 import BgvDashboard from "./Pages/Bgv/Dashboard";
+import AuditorRoutes from "./Routes/Auditor";
+import AuditorDefaultLayout from "./Pages/Auditor/DefaultLayout/index";
 
 const App = () => {
   return (
@@ -50,7 +51,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
+        <Route path="/signup/:role" element={<Signup />} />
         <Route path="/adminlogin" element={<AdminLogin />} />
         {/* Footer Route */}
         <Route path="/termsandcondition" element={<Term />} />
@@ -70,27 +71,22 @@ const App = () => {
         <Route path="/feedback" element={<Feedback />} />
         <Route path="/trustsafety" element={<TrustAndSafety />} />
         <Route path="/fraudalert" element={<FraudAlert />} />
-        <Route
-          path="/admin"
-          element={
-            <ProtectedRoute component={Dashboard} token={"admin-token"} />
-          }
-        >
+        <Route path="/admin" element={<Dashboard />}>
           {AdminRoutes.map(({ path, element: Ele }, index) => (
             <Route key={index} path={path} element={Ele} />
           ))}
         </Route>
-        <Route
-          path="/student"
-          element={
-            <ProtectedRoute component={DefaultLayouts} token={"stu-token"} />
-          }
-        >
+        <Route path="/student" element={<DefaultLayouts />}>
           {StudentRoutes.map(({ path, element: Ele }, index) => (
             <Route key={index} path={path} element={Ele} />
           ))}
         </Route>
-        <Route
+        <Route path="/auditor" element={<AuditorDefaultLayout />}>
+          {AuditorRoutes.map(({ path, element: Ele }, index) => (
+            <Route key={index} path={path} element={Ele} />
+          ))}
+        </Route>
+        {/* <Route
           path="/BgvHome"
           element={
             <ProtectedRoute component={BgvDashboard} token={"stu-token"} />
@@ -99,21 +95,13 @@ const App = () => {
           {BgvRoutes.map(({ path, element: Ele }, index) => (
             <Route key={index} path={path} element={Ele} />
           ))}
-        </Route>
-        <Route
-          path="/professional"
-          element={
-            <ProtectedRoute
-              component={ProfessionalDefaultLayout}
-              token={"pro_token"}
-            />
-          }
-        >
+        </Route> */}
+        <Route path="/professional" element={<ProfessionalDefaultLayout />}>
           {EmployeeRoutes.map(({ path, element: Ele }, index) => (
             <Route key={index} path={path} element={Ele} />
           ))}
         </Route>
-        <Route
+        {/* <Route
           path="/employer"
           element={
             <ProtectedRoute component={Employer} token={"employer_token"} />
@@ -123,8 +111,8 @@ const App = () => {
             <Route key={index} path={path} element={Ele} />
           ))}
         </Route>
-
-        <Route
+ */}
+        {/* <Route
           path="/college"
           element={
             <ProtectedRoute component={College} token={"college-token"} />
@@ -133,8 +121,8 @@ const App = () => {
           {CollegeRoutes.map(({ path, element: Ele }, index) => (
             <Route key={index} path={path} element={Ele} />
           ))}
-        </Route>
-        <Route
+        </Route> */}
+        {/* <Route
           path="/institute"
           element={
             <ProtectedRoute component={Traning} token={"institute_token"} />
@@ -143,12 +131,12 @@ const App = () => {
           {TrainingInstituteRoutes.map(({ path, element: Ele }, index) => (
             <Route key={index} path={path} element={Ele} />
           ))}
-        </Route>
-        <Route path="" element={<Joblayout />}>
+        </Route> */}
+        {/* <Route path="" element={<Joblayout />}>
           {JobRoutes.map(({ path, element: Ele }, index) => (
             <Route key={index} path={path} element={Ele} />
           ))}
-        </Route>
+        </Route> */}
       </Routes>
     </Suspense>
   );

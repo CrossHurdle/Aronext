@@ -65,6 +65,7 @@ function BackroundVerificationSignup() {
 
   const handleFormSubmit = async () => {
     const userDetails = {
+      role: "BgvHome",
       companyName: getValues().companyName,
       type: getValues().type,
       website: getValues().website,
@@ -137,7 +138,7 @@ function BackroundVerificationSignup() {
             </Toast>
           </ToastContainer>
           <h4>
-            {step === "first" ? "details" : step === "second" && "Address"}
+            {step === "first" ? "Details" : step === "second" && "Address"}
           </h4>
 
           <div>
@@ -325,41 +326,43 @@ function BackroundVerificationSignup() {
                                   )}
                                 </div>
                               </Col>
-                              {/* <Col
-                        className="d-block justify-content-center align-items-center mt-3"
-                        md={6}
-                        sm={12}
-                      >
-                        <label className="mb-1">Confirm Password</label>
-                        <div>
-                          <input
-                            className="input1"
-                            // type="password"
-                            type={passwordShown ? "text" : "password"}
-                            {...register("confirmPassword", { required: true })}
-                          />
-                          <FontAwesomeIcon
-                            icon={passwordShown ? faEye : faEyeSlash}
-                            onClick={() => handlePasswordShow()}
-                            style={{
-                              cursor: "pointer",
-                              color: "black",
-                              marginLeft: "82%",
-                              position: "relative",
-                              top: "-24px",
-                            }}
-                          />
+                              <Col
+                                className="d-block justify-content-center align-items-center mt-3"
+                                md={6}
+                                sm={12}
+                              >
+                                <label className="mb-1">Confirm Password</label>
+                                <div>
+                                  <input
+                                    className="input1"
+                                    // type="password"
+                                    type={passwordShown ? "text" : "password"}
+                                    {...register("confirmPassword", {
+                                      required: true,
+                                    })}
+                                  />
+                                  <FontAwesomeIcon
+                                    icon={passwordShown ? faEye : faEyeSlash}
+                                    onClick={() => handlePasswordShow()}
+                                    style={{
+                                      cursor: "pointer",
+                                      color: "black",
+                                      marginLeft: "82%",
+                                      position: "relative",
+                                      top: "-24px",
+                                    }}
+                                  />
 
-                          {errors.confirmPassword && (
-                            <p
-                              className="error-text-color"
-                              style={{ marginTop: "-23px" }}
-                            >
-                              Confirm password is required
-                            </p>
-                          )}
-                        </div>
-                      </Col> */}
+                                  {errors.confirmPassword && (
+                                    <p
+                                      className="error-text-color"
+                                      style={{ marginTop: "-23px" }}
+                                    >
+                                      Confirm password is required
+                                    </p>
+                                  )}
+                                </div>
+                              </Col>
                             </Row>
                             <div className="d-flex justify-content-end mt-2">
                               <Button

@@ -38,6 +38,7 @@ function StudentLogin() {
       email: getValues().email,
       password: getValues().password,
     };
+    console.log("userDetails", userDetails);
 
     await Api.post(`users/login`, userDetails)
       .then((response) => {
@@ -53,6 +54,7 @@ function StudentLogin() {
           const name = response.data.userName;
           const email = response.data.data.email;
           const id = response.data.data._id;
+          const regid = response.data.data.RegistrationId;
 
           localStorage.setItem("USER_AUTH_STATE", true);
           localStorage.setItem("stu-token", token);
@@ -60,6 +62,7 @@ function StudentLogin() {
           localStorage.setItem("role", role);
           localStorage.setItem("email", email);
           localStorage.setItem("id", id);
+          localStorage.setItem("regid", regid);
 
           navigate("/student");
           sessionStorage.setItem("USER_AUTH_STATE", true);

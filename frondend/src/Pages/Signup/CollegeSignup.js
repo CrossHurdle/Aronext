@@ -88,6 +88,7 @@ function TrainingInstituteSignup() {
 
   const handleFormSubmit = async () => {
     const userDetails = {
+      role: "college",
       collegeName: getValues().collegeName,
       collegetype: getValues().collegetype,
       website: getValues().website,

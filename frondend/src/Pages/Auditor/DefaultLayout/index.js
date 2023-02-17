@@ -11,7 +11,7 @@ import { HiUserCircle } from "react-icons/hi";
 
 const { Content } = Layout;
 
-function DefaultLayout() {
+function AuditorDefaultLayout() {
   const [collapsed, setCollapsed] = useState(true);
 
   const handleChange = () => {
@@ -59,4 +59,4 @@ function DefaultLayout() {
   );
 }
 
-export default DefaultLayout;
+export default AuditorDefaultLayout;

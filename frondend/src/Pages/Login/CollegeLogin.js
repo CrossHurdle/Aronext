@@ -53,11 +53,14 @@ function CollegeLogin() {
           const role = response.data.data.role;
           const token = response.data.token;
           const name = response.data.userName;
+          const regid = response.data.data.RegistrationId;
 
           localStorage.setItem("USER_AUTH_STATE", true);
           localStorage.setItem("role", role);
           localStorage.setItem("college-token", token);
           localStorage.setItem("name", name);
+          localStorage.setItem("regid", regid);
+
           navigate("/college");
           sessionStorage.setItem("USER_AUTH_STATE", true);
         }

@@ -69,7 +69,6 @@ function Studentsignup(props) {
     register,
     handleSubmit,
     formState: { errors },
-    form,
     getValues,
   } = useForm();
 
@@ -95,6 +94,7 @@ function Studentsignup(props) {
 
   const handleFormSubmit = async () => {
     let userDetails = {
+      role: "student",
       firstName: getValues().firstName,
       LastName: getValues().lastName,
       email: getValues().mail,
@@ -111,12 +111,14 @@ function Studentsignup(props) {
       pincode: getValues().pincode,
     };
 
-    await Api.post(`signup/create`, userDetails)
+    Api.post(`signup/create`, userDetails)
+
       .then((res) => {
         setResres({
           status: res.data?.status,
           message: res.data?.message,
         });
+
         localStorage.setItem("userId", res.data.data._id);
         setTimeout(() => {
           navigate("/");
@@ -156,14 +158,13 @@ function Studentsignup(props) {
       <div>
         <div className="px-5">
           <ToastContainer position="top-end">
-            <Toast onClose={() => setShow(false)} show={show} autoClose={15000}>
+            <Toast onClose={() => setShow(false)} show={show} autoClose={13000}>
               <Toast.Header>
                 <strong className="me-auto text-success">Success</strong>
               </Toast.Header>
               <Toast.Body className="toast-message">
                 Welcome to JOBMARS Family. <br />
-                your profile will be activated within 24 hours. please check
-                your email.
+                please check your email.
               </Toast.Body>
             </Toast>
           </ToastContainer>
@@ -240,7 +241,6 @@ function Studentsignup(props) {
                           type="number"
                           {...register("phone", {
                             minLength: 10,
-                            maxLength: 10,
                             maxLength: 10,
                             required: true,
                           })}

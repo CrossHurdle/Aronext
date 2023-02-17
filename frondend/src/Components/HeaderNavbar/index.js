@@ -77,7 +77,7 @@ const HeaderNavbar = () => {
                   <Link className="navbartitle p-3" to="/login">
                     Login
                   </Link>
-                  <Link to="/signup" className="navbartitle p-3">
+                  <Link to="/signup/Student" className="navbartitle p-3">
                     Signup
                   </Link>
                 </Nav.Link>
