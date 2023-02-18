@@ -57,11 +57,13 @@ function AdminLogin() {
         if (response.data.token) {
           const token = response.data.token;
           const name = response.data.userName;
+          const regid = response.data.data.RegistrationId;
 
           localStorage.setItem("USER_AUTH_STATE", true);
           localStorage.setItem("Role", "admin");
           localStorage.setItem("admin-token", token);
           localStorage.setItem("name", name);
+          localStorage.setItem("regid", regid);
 
           navigate("/admin");
           sessionStorage.setItem("USER_AUTH_STATE", true);
@@ -96,7 +98,7 @@ function AdminLogin() {
           <Toast.Body>{resres?.message}</Toast.Body>
         </Toast>
       </ToastContainer>
-      <Container className="admin-main">
+      <div className="admin-main">
         <center>
           <Card className="admin-login-card">
             <center>
@@ -117,7 +119,7 @@ function AdminLogin() {
                 <p className="forgot-error-text">email is required</p>
               )}
               <br />
-              <label className="admin_label mt-4">Password</label>
+              <label className="admin_label ">Password</label>
               <br />
               <InputText
                 className="admin_input mt-2"
@@ -146,7 +148,7 @@ function AdminLogin() {
             </div>
           </Card>
         </center>
-      </Container>
+      </div>
     </div>
   );
 }

@@ -74,12 +74,14 @@ const HeaderNavbar = () => {
                 </Popover>
               ) : (
                 <Nav.Link>
-                  <Link className="navbartitle p-3" to="/login">
-                    Login
-                  </Link>
-                  <Link to="/signup" className="navbartitle p-3">
-                    Signup
-                  </Link>
+                  <div className="navbarContainer">
+                    <Link className="navbartitle pe-3" to="/login">
+                      Login
+                    </Link>
+                    <Link to="/signup" className="navbartitle ps-2">
+                      Signup
+                    </Link>
+                  </div>
                 </Nav.Link>
               )}
               {/* <Link className="navbartitle p-3" to="/login">

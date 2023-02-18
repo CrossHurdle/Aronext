@@ -53,11 +53,14 @@ function BackroundVerificationLogin() {
           const role = response.data.data.role;
           const token = response.data.token;
           const name = response.data.userName;
+          const regid = response.data.data.RegistrationId;
 
           localStorage.setItem("USER_AUTH_STATE", true);
           localStorage.setItem("role", role);
           localStorage.setItem("BackroundVerification-token", token);
           localStorage.setItem("name", name);
+          localStorage.setItem("regid", regid);
+
           navigate("/BgvHome");
           sessionStorage.setItem("USER_AUTH_STATE", true);
         }
@@ -80,8 +83,9 @@ function BackroundVerificationLogin() {
         <Toast onClose={() => setShow(false)} show={show} delay={3000} autohide>
           <Toast.Header>
             <strong
-              className={`me-auto text-${resres?.status === "Success" ? "success" : "danger"
-                }`}
+              className={`me-auto text-${
+                resres?.status === "Success" ? "success" : "danger"
+              }`}
             >
               {resres?.status}
             </strong>

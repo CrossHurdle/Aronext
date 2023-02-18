@@ -7,7 +7,7 @@ import { AiOutlineDoubleLeft } from "react-icons/ai";
 import { useForm } from "react-hook-form";
 import OTPInput from "react-otp-input";
 import Api from "../../Api";
-
+import HeaderNavbar from "../../Components/HeaderNavbar";
 function Forgetpassword(props) {
   const [step, setstep] = useState("first");
   const [show, setShow] = useState(false);
@@ -123,6 +123,7 @@ function Forgetpassword(props) {
           <Toast.Body>{resres?.message}</Toast.Body>
         </Toast>
       </ToastContainer>
+      <HeaderNavbar />
       <Container className="forget_main">
         <center>
           <Card className="forget_password ">

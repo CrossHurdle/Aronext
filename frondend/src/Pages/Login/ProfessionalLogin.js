@@ -53,13 +53,15 @@ function ProfessionalLogin() {
           const name = response.data.userName;
           const email = response.data.data.email;
           const id = response.data.data._id;
+          const regid = response.data.data.RegistrationId;
 
           localStorage.setItem("USER_AUTH_STATE", true);
           localStorage.setItem("role", role);
           localStorage.setItem("pro-token", token);
           localStorage.setItem("name", name);
           localStorage.setItem("email", email);
-          localStorage.setItem("id",id)
+          localStorage.setItem("id", id);
+          localStorage.setItem("regid", regid);
 
           navigate("/professional");
           sessionStorage.setItem("USER_AUTH_STATE", true);
