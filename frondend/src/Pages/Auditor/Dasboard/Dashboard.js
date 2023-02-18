@@ -54,7 +54,7 @@ export default function StudentDashboard() {
         <Col sm={24} md={12} lg={8} className="dash-col">
           <Card
             className="Dash-cards"
-            onClick={() => navigate("/student/intern")}
+            // onClick={() => navigate("/student/intern")}
           >
             <div className="card-field">
               <div>
