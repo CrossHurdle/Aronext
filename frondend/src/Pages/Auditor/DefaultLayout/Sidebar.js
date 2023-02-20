@@ -25,6 +25,10 @@ function Sidebar({ collapsed }) {
   return (
     <div className={collapsed === true ? "sidebarcontent open" : "d-none"}>
       <Menu onClick={onClick} mode="inline" className="nav-list">
+        <NavLink to="registration" activeClassName="main-nav-style">
+          <MdHome className="Nav-Icon" />
+          Registration
+        </NavLink>
         <NavLink to="" activeClassName="main-nav-style">
           <MdHome className="Nav-Icon" />
           Dashboard

@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
-import { Row, Col, Radio } from "antd";
+import { Row, Col, DatePicker, Checkbox, Divider, Popover } from "antd";
 import { Dropdown } from "primereact/dropdown";
 import Api from "../../../Api.js";
 import "../../../Components/Css/Students/Student.scss";
 import "primereact/resources/themes/saga-blue/theme.css";
 import "primereact/resources/primereact.min.css";
-import { DatePicker, Space } from "antd";
+import { DownOutlined, UserOutlined } from "@ant-design/icons";
+import { Button, message, Space, Tooltip } from "antd";
 
 function PersonalInfo() {
   const {
@@ -41,6 +42,18 @@ function PersonalInfo() {
     await Api.post(`Student/createpersonal`, Details).then((resp) => {
       localStorage.setItem("personalId", resp.data.data._id);
     });
+  };
+
+  const content = (
+    <div>
+      <p>Content</p>
+      <p>Content</p>
+    </div>
+  );
+
+  const [placement, SetPlacement] = useState("topLeft");
+  const placementChange = (e) => {
+    SetPlacement(e.target.value);
   };
 
   return (
@@ -89,9 +102,9 @@ function PersonalInfo() {
                 {...register("filingperiod", { required: true })}
               >
                 <option value="select">select </option>
-                <option value="Male">yearly</option>
-                <option value="Female">halfly</option>
-                <option value="Others">quaterly</option>
+                <option value="yearly">yearly</option>
+                <option value="halfly">halfly</option>
+                <option value="quaterly">quaterly</option>
               </select>
               <br />
               {errors.filingperiod && (
@@ -103,7 +116,118 @@ function PersonalInfo() {
               <RangePicker picker="month" />
             </Col>
           </Row>
+          <Col className="p-2 mt-4">
+            <Row>
+              <Col md={3}>
+                <Popover content={content} title="Title" trigger="hover">
+                  <Checkbox>GST</Checkbox>
+                </Popover>
+              </Col>
+              <Col md={3}>
+                <Popover content={content} title="Title" trigger="hover">
+                  <Checkbox>PF</Checkbox>
+                </Popover>
+              </Col>
+              <Col md={3}>
+                <Popover content={content} title="Title" trigger="hover">
+                  <Checkbox>ESI</Checkbox>
+                </Popover>
+              </Col>
+              <Col md={3}>
+                <Popover content={content} title="Title" trigger="hover">
+                  <Checkbox>PI</Checkbox>
+                </Popover>
+              </Col>
+              <Col md={3}>
+                <Popover content={content} title="Title" trigger="hover">
+                  <Checkbox>Form11</Checkbox>
+                </Popover>
+              </Col>
+              <Col md={3}>
+                <Popover content={content} title="Title" trigger="hover">
+                  <Checkbox>Form3</Checkbox>
+                </Popover>
+              </Col>
+
+              <Popover content={content} title="Title" trigger="hover">
+                <Checkbox>Payroll</Checkbox>
+              </Popover>
+            </Row>
+          </Col>
           {/* </Row> */}
+          <Row>
+            <Col md={6} className="p-2 mt-4"></Col>
+            <Col md={6} className="p-2 mt-4">
+              Filingperiod
+            </Col>
+            <Col md={6} className="p-2 mt-4">
+              FilingDate
+            </Col>
+            <Col md={6} className="p-2 mt-4">
+              DateExpected
+            </Col>
+          </Row>
+          <Row>
+            <Col md={6} className="p-2 mt-4">
+              GST
+            </Col>
+            <Col md={6} className="p-2 mt-4">
+              <select>
+                <option value="select">select </option>
+                <option value="yearly">yearly</option>
+                <option value="halfly">halfly</option>
+                <option value="quaterly">quaterly</option>
+                <option value="quaterly">monthly</option>
+              </select>
+            </Col>
+            <Col md={6} className="p-2 mt-4">
+              <DatePicker placement={placement} />
+            </Col>
+            <Col md={6} className="p-2 mt-4">
+              <DatePicker placement={placement} />
+            </Col>
+          </Row>
+          <Row>
+            <Col md={6} className="p-2 mt-4">
+              PF
+            </Col>
+            <Col md={6} className="p-2 mt-4">
+              <select>
+                <option value="select">select </option>
+                <option value="yearly">yearly</option>
+                <option value="halfly">halfly</option>
+                <option value="quaterly">quaterly</option>
+                <option value="quaterly">monthly</option>
+              </select>
+            </Col>
+            <Col md={6} className="p-2 mt-4">
+              <DatePicker placement={placement} />
+            </Col>
+            <Col md={6} className="p-2 mt-4">
+              <DatePicker placement={placement} />
+            </Col>
+          </Row>
+          <Row>
+            <Col md={6} className="p-2 mt-4">
+              PI
+            </Col>
+            <Col md={6} className="p-2 mt-4">
+              <select>
+                <option value="select">select </option>
+                <option value="yearly">yearly</option>
+                <option value="halfly">halfly</option>
+                <option value="quaterly">quaterly</option>
+                <option value="quaterly">monthly</option>
+              </select>
+            </Col>
+            <Col md={6} className="p-2 mt-4">
+              <DatePicker placement={placement} />
+            </Col>
+            <Col md={6} className="p-2 mt-4">
+              <DatePicker placement={placement} />
+            </Col>
+          </Row>
+
           <div className="submitbuttons p-2">
             <button
               className="button1 m-2 p-2"
