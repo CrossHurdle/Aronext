@@ -4,13 +4,14 @@ import { Radio, Space } from "antd";
 import "../../Components/Css/signup.css";
 import { Link, useLocation, useParams } from "react-router-dom";
 import Studentsignup from "./StudentSignup";
-import ProfessionalSignup from "./ProfessionalSignup";
+import UserSignup from "./ProfessionalSignup";
 import EmployerSignup from "./EmployerSignup";
-import TrainingInstituteSignup from "./TrainingInstituteSignup";
+import AccountantSignup from "./TrainingInstituteSignup";
+import IpcopyrightSignup from "./IpcopyrightSignup";
 import icons from "../../assets/iconss.png";
 import HeaderNavbar from "../../Components/HeaderNavbar";
-import CollegeSignup from "./CollegeSignup";
-import BackroundVerificationSignup from "./BackgroundVerificationSignup";
+import AdvisorSignup from "./CollegeSignup";
+import LawerSignup from "./BackgroundVerificationSignup";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 
@@ -98,10 +99,10 @@ const Signup = () => {
                             />
                           );
                         }
-                        if (a === "IP/Copyright") {
+                        if (a === "IPCopyright") {
                           return (
                             <img
-                              src="https://media.istockphoto.com/id/1307457287/photo/group-of-happy-students-looking-at-exam-results-while-standing-at-university-hallway.jpg?b=1&s=170667a&w=0&k=20&c=zNDAjhdSVc-Y10IFdFBORjHIQzHnA0E-LaWkPynpzfI="
+                              src="https://media.istockphoto.com/id/1314468710/photo/indian-woman-showing-graphs-on-the-laptop.jpg?s=612x612&w=0&k=20&c=a5pD0TBbd1gZQwu5k3BcoDp8gBV1tY2B2YXLK8ACOhE="
                               alt="Copywrites"
                               style={{ height: "80vh", width: "100%" }}
                             />
@@ -165,10 +166,10 @@ const Signup = () => {
                             />
                           );
                         }
-                        if (role === "IP/Copyright") {
+                        if (role === "IPCopyright") {
                           return (
                             <img
-                              src="https://media.istockphoto.com/id/1307457287/photo/group-of-happy-students-looking-at-exam-results-while-standing-at-university-hallway.jpg?b=1&s=170667a&w=0&k=20&c=zNDAjhdSVc-Y10IFdFBORjHIQzHnA0E-LaWkPynpzfI="
+                              src="https://media.istockphoto.com/id/1366274493/photo/business-invoice-tax-management.jpg?s=612x612&w=0&k=20&c=9hwOU2bOHJKLg_nuJUdoKcWS7qmvKlV6x-2Bpkg7N_0="
                               alt="IP/Copyright"
                               style={{ height: "80vh", width: "100%" }}
                             />
@@ -193,7 +194,8 @@ const Signup = () => {
                   style={{ width: "90%" }}
                 >
                   <h4 className="d-flex justify-content-center">
-                    <span style={{ color: "red" }}> FERIL </span> &nbsp;Signup
+                    <span style={{ color: "#1976d2" }}> Aronext </span>{" "}
+                    &nbsp;Signup
                   </h4>
                   <p
                     className="d-flex justify-content-center mt-2"
@@ -212,7 +214,7 @@ const Signup = () => {
                         <option value={"Auditor"}>Auditor</option>
                         <option value={"Accountant"}>Accountant</option>
                         <option value={"Advisor"}>Advisor</option>
-                        <option value={"IP/Copyright"}>IP/Copyright</option>
+                        <option value={"IPCopyright"}>IP/Copyright</option>
                         <option value={"Lawer"}>Lawer</option>
                       </select>
                     ) : (
@@ -227,7 +229,7 @@ const Signup = () => {
                         <option value={"Auditor"}>Auditor</option>
                         <option value={"Accountant"}>Accountant</option>
                         <option value={"Advisor"}>Advisor</option>
-                        <option value={"IP/Copyright"}>IP/Copyright</option>
+                        <option value={"IPCopyright"}>IP/Copyright</option>
                         <option value={"Lawer"}>Lawer</option>
                       </select>
                     )}{" "}
@@ -249,20 +251,23 @@ const Signup = () => {
                           return <Studentsignup />;
                         }
 
-                        if (a === "Professional") {
-                          return <ProfessionalSignup />;
+                        if (a === "User") {
+                          return <UserSignup />;
                         }
                         if (a === "Auditor") {
                           return <EmployerSignup />;
                         }
-                        if (a === "Institute") {
-                          return <TrainingInstituteSignup />;
+                        if (a === "Accountant") {
+                          return <AccountantSignup />;
                         }
-                        if (a === "College") {
-                          return <CollegeSignup />;
+                        if (a === "Advisor") {
+                          return <AdvisorSignup />;
                         }
-                        if (a === "BackroundVerification") {
-                          return <BackroundVerificationSignup />;
+                        if (a === "IPCopyright") {
+                          return <IpcopyrightSignup />;
+                        }
+                        if (a === "Lawer") {
+                          return <LawerSignup />;
                         }
                       })()}
                     {(typeof state !== "string" || !state) &&
@@ -271,20 +276,23 @@ const Signup = () => {
                           return <Studentsignup />;
                         }
 
-                        if (role === "Professional") {
-                          return <ProfessionalSignup />;
+                        if (role === "User") {
+                          return <UserSignup />;
                         }
                         if (role === "Auditor") {
                           return <EmployerSignup />;
                         }
-                        if (role === "Institute") {
-                          return <TrainingInstituteSignup />;
+                        if (role === "Accountant") {
+                          return <AccountantSignup />;
                         }
-                        if (role === "College") {
-                          return <CollegeSignup />;
+                        if (role === "Advisor") {
+                          return <AdvisorSignup />;
                         }
-                        if (role === "BackroundVerification") {
-                          return <BackroundVerificationSignup />;
+                        if (a === "IPCopyright") {
+                          return <IpcopyrightSignup />;
+                        }
+                        if (role === "Lawer") {
+                          return <LawerSignup />;
                         }
                       })()}
                   </div>
