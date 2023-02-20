@@ -247,19 +247,20 @@ function EmployerSignup() {
                         md={6}
                         sm={12}
                       >
-                        <label className="mb-1">Email ID</label>
+                        <label className="mb-1">Proffession</label>
                         <input
                           className="input"
                           {...register("mail", {
                             required: true,
                             pattern: {
-                              value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                              message: "invalid email address",
+                              value: /^[A-Za-z]+$/i,
                             },
                           })}
                         />
                         {errors.mail && (
-                          <p className="error-text-color">Email is required</p>
+                          <p className="error-text-color">
+                            Proffession is required
+                          </p>
                         )}
                       </Col>
                       <Col
