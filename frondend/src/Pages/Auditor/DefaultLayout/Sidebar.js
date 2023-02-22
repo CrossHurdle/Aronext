@@ -25,18 +25,35 @@ function Sidebar({ collapsed }) {
   return (
     <div className={collapsed === true ? "sidebarcontent open" : "d-none"}>
       <Menu onClick={onClick} mode="inline" className="nav-list">
-        <NavLink to="registration" activeClassName="main-nav-style">
-          <MdHome className="Nav-Icon" />
-          Registration
-        </NavLink>
         <NavLink to="" activeClassName="main-nav-style">
           <MdHome className="Nav-Icon" />
           Dashboard
         </NavLink>
-        <NavLink to="company" activeClassName="main-nav-style">
+        <NavLink to="registration" activeClassName="main-nav-style">
+          <MdHome className="Nav-Icon" />
+          Registration
+        </NavLink>
+        {/* <NavLink to="company" activeClassName="main-nav-style">
           <MdOutlineDashboardCustomize className="Nav-Icon" />
           Company
-        </NavLink>
+        </NavLink> */}
+        <SubMenu
+          icon={<MdOutlineDashboardCustomize size={20} className="Nav-Icon1" />}
+          title="Company"
+        >
+          <NavLink to="company">
+            <MdRequestPage className="Nav-Icon" />
+            Company
+          </NavLink>
+          <NavLink to="user">
+            <MdSend className="Nav-Icon" />
+            User
+          </NavLink>
+          <NavLink to="accountant">
+            <MdSend className="Nav-Icon" />
+            Accountant
+          </NavLink>
+        </SubMenu>
 
         <NavLink to="complainces" activeClassName="main-nav-style">
           <MdPerson className="Nav-Icon" />

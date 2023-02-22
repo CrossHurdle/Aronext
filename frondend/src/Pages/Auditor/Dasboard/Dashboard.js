@@ -32,7 +32,7 @@ export default function StudentDashboard() {
                 <BsBook className="dashIcons" />
               </div>
               <div>
-                <h4 className="fieldsname">No.of Employers</h4>
+                <h4 className="fieldsname">No.of Student</h4>
                 <h4 className="fieldscount">3</h4>
               </div>
             </div>
@@ -61,7 +61,7 @@ export default function StudentDashboard() {
                 <BiBuilding className="dashIcons" />
               </div>
               <div>
-                <h4 className="fieldsname">Internship</h4>
+                <h4 className="fieldsname">users</h4>
                 <h4 className="fieldscount">3</h4>
               </div>
             </div>

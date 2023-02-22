@@ -56,44 +56,35 @@ function PersonalInfo() {
     <div>
       <form onSubmit={handleSubmit(handleFormSubmit)}>
         <div className="personal-informations p-4">
-          <div className="pages-title mb-3">Company Info</div>
+          <div className="pages-title mb-3">Accountant Info</div>
           <Row className="mb-3">
             <Col sm={24} md={8} className="Stud-personal-col p-2">
-              <label className="input-title">Company Name </label>
+              <label className="input-title">Accountant Name </label>
               <input
                 className="input-field"
-                {...register("companyname", { required: true })}
+                {...register("Accountantname", { required: true })}
               />
               <br />
-              {errors.companyname && (
+              {errors.accountantname && (
                 <span className="Stud-personal-error">
-                  Company Name is required
+                  Accountant Name is required
                 </span>
               )}
             </Col>
-            <Col sm={24} md={8} className="Stud-personal-col p-2">
-              <label className="input-title">Company Type </label>
-              <input
+            <Col sm={24} md={8} className="p-2">
+              <label className="input-title">Gender </label>
+              <select
                 className="input-field"
-                {...register("companytype", { required: true })}
-              />
+                {...register("gender", { required: true })}
+              >
+                <option value="select">select </option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Others">Others</option>
+              </select>
               <br />
-              {errors.companytype && (
-                <span className="Stud-personal-error">
-                  Company Type is required
-                </span>
-              )}
-            </Col>
-            <Col sm={24} md={8} className="Stud-personal-col p-2">
-              <label className="input-title">LLPA </label>
-              <br />
-              <input
-                className="input-field"
-                {...register("LLPA", { required: true })}
-              />
-              <br />
-              {errors.LLPA && (
-                <span className="Stud-personal-error">LLPA is required</span>
+              {errors.gender && (
+                <span className="input-error">Gender required</span>
               )}
             </Col>
             <Col sm={24} md={8} className="Stud-personal-col p-2">
@@ -109,19 +100,7 @@ function PersonalInfo() {
                 </span>
               )}
             </Col>
-            <Col sm={24} md={8} className="Stud-personal-col p-2">
-              <label className="input-title">Contact Person </label>
-              <input
-                className="input-field"
-                {...register("contactperson", { required: true })}
-              />
-              <br />
-              {errors.contactperson && (
-                <span className="Stud-personal-error">
-                  Contact Person is required
-                </span>
-              )}
-            </Col>
+
             <Col sm={24} md={8} className="Stud-personal-col p-2">
               <label className="input-title">Email </label>
               <input
@@ -148,6 +127,35 @@ function PersonalInfo() {
                 </span>
               )}
             </Col>
+            <Col sm={24} md={8} className="p-2">
+              <label className="input-title">Work Experience </label>
+              <select
+                className="input-field"
+                {...register("Workexperience", { required: true })}
+              >
+                <option value="select">select </option>
+                <option value="Male">0-5</option>
+                <option value="Female">5-10</option>
+                <option value="Others">Others</option>
+              </select>
+              <br />
+              {errors.Workexperience && (
+                <span className="input-error">Work Experience required</span>
+              )}
+            </Col>
+            <Col sm={24} md={8} className="Stud-personal-col p-2">
+              <label className="input-title">Aadhar Number </label>
+              <input
+                className="input-field"
+                {...register("Aadharnumber", { required: true })}
+              />
+              <br />
+              {errors.aadharnumber && (
+                <span className="Stud-personal-error">
+                  Aadhar Number is required
+                </span>
+              )}
+            </Col>
             <Col sm={24} md={8} className="Stud-personal-col p-2">
               <label className="input-title">PAN Number </label>
               <input
@@ -162,42 +170,70 @@ function PersonalInfo() {
               )}
             </Col>
             <Col sm={24} md={8} className="Stud-personal-col p-2">
-              <label className="input-title">TAN Number </label>
+              <label className="input-title">Address</label>
+              <br />
               <input
+                rows="1"
                 className="input-field"
-                {...register("TANnumber", { required: true })}
+                {...register("Address", { required: true })}
               />
               <br />
-              {errors.TANnumber && (
-                <span className="Stud-personal-error">
-                  TAN Number is required
-                </span>
+              {errors.Address && (
+                <span className="Stud-personal-error">Address is required</span>
               )}
             </Col>
-            <Col sm={24} md={8} className="Stud-personal-col p-2">
-              <label className="input-title">GST Number </label>
-              <input
+            <Col sm={24} md={8} className="p-2">
+              <label className="input-title">Country</label>
+              <select
                 className="input-field"
-                {...register("GSTnumber", { required: true })}
-              />
+                {...register("Country", { required: true })}
+              >
+                <option value="select">select </option>
+              </select>
               <br />
-              {errors.GSTnumber && (
-                <span className="Stud-personal-error">
-                  GSTnumber is required
-                </span>
+              {errors.country && (
+                <span className="input-error">Country required</span>
               )}
             </Col>
-            <Col sm={24} md={8} className="Stud-personal-col p-2">
-              <label className="input-title">CI Number </label>
-              <input
-                className="input-field"
-                {...register("CInumber", { required: true })}
-              />
+            <Col sm={24} md={8} className="p-2">
+              <label className="input-title">State </label>
               <br />
-              {errors.CInumber && (
-                <span className="Stud-personal-error">
-                  CI Number is required
-                </span>
+              <select
+                className="input-field"
+                {...register("State", { required: true })}
+              >
+                <option value="select">select </option>
+              </select>
+              <br />
+              {errors.state && (
+                <span className="input-error">State required</span>
+              )}
+            </Col>
+            <Col sm={24} md={8} className="p-2">
+              <label className="input-title">District </label>
+              <select
+                className="input-field"
+                {...register("District", { required: true })}
+              >
+                <option value="select">select </option>
+              </select>
+              <br />
+              {errors.district && (
+                <span className="input-error">District required</span>
+              )}
+            </Col>
+            <Col sm={24} md={8} className="p-2">
+              <label className="input-title">City </label>
+              <br />
+              <select
+                className="input-field"
+                {...register("City", { required: true })}
+              >
+                <option value="select">select </option>
+              </select>
+              <br />
+              {errors.city && (
+                <span className="input-error">City required</span>
               )}
             </Col>
             <Col sm={24} md={8} className="Stud-personal-col p-2">
@@ -238,29 +274,6 @@ function PersonalInfo() {
                 </span>
               )}
             </Col>
-          </Row>
-          <p>Which Services you want?</p>
-          <Row>
-            <Col md={3}>
-              <Checkbox>GST</Checkbox>
-            </Col>
-            <Col md={3}>
-              <Checkbox>PF</Checkbox>
-            </Col>
-            <Col md={3}>
-              <Checkbox>ESI</Checkbox>
-            </Col>
-            <Col md={3}>
-              <Checkbox>PI</Checkbox>
-            </Col>
-            <Col md={3}>
-              <Checkbox>Form11</Checkbox>
-            </Col>
-            <Col md={3}>
-              <Checkbox>Form3</Checkbox>
-            </Col>
-
-            <Checkbox>Payroll</Checkbox>
           </Row>
 
           <div className="submitbuttons p-2">
