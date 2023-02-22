@@ -43,11 +43,13 @@ import Dashboard from "./Pages/Admin/Dashboard/AdminSidebar";
 import ProtectedRoute from "./Routes/ProtectedRoute";
 import BgvRoutes from "./Routes/BgvRoutes";
 import BgvDashboard from "./Pages/Bgv/Dashboard";
+import Userregistration from "./Pages/Registration/Userregistration";
 
 const App = () => {
   return (
     <Suspense fallback={<h1>Loading</h1>}>
       <Routes>
+        <Route path="/userregistration" element={<Userregistration />} />
         <Route path="/" element={<Homepage />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup/:role" element={<Signup />} />

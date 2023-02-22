@@ -597,7 +597,6 @@
 
 // export default TrainingInstituteSignup;
 
-
 import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -610,7 +609,7 @@ import { Dropdown } from "primereact";
 import { useNavigate } from "react-router-dom";
 import "./EmailStyle.css";
 
-function AdvisorSignup() {
+function AdvisorSign() {
   const [step, setstep] = useState("first");
   const [countryList, setcountryList] = useState([]);
   // const [countryValue, setCountryValue] = useState();
@@ -627,7 +626,7 @@ function AdvisorSignup() {
   const [passwordShown, setpasswordShown] = useState(false);
   const [msg, setMsg] = useState("");
   const [error, setError] = useState("");
-
+  const [pan, setPan] = useState();
   const [isSubmit, setIsSubmit] = useState(false);
   const handlePasswordShow = () => {
     setpasswordShown(!passwordShown);
@@ -894,90 +893,69 @@ function AdvisorSignup() {
                         )}
                       </Col>
                     </Row>
-                    {/* <Row className="mt-3 mb-2">
-                      <Col className="d-block justify-content-center align-items-center  mt-3">
-                        <label className="mb-1">Industry Type</label>
-                        <Dropdown
-                          filter
-                          name="industryType"
-                          className="input1"
-                          value={industryType}
-                          options={industryTypeselect}
-                          onChange={onindustryType}
-                          {...register("industryType", {
-                            required: true,
-                            onChange: (e) => {
-                              setIndustryType(e.target.value);
-                            },
-                          })}
-                        />
-                        {errors.industryType && (
-                          <p className="error-text-color">
-                            industryType is required
-                          </p>
-                        )}
-                      </Col>
-                      <Col
-                        className="d-block justify-content-center align-items-center  mt-3 form-group"
-                        md={6}
-                        sm={12}
-                      >
-                        <label className="mb-1">Established Year</label>
-                        <input
-                          type="month"
-                          className="input1"
-                          {...register("establishedYear", {
-                            required: true,
-                          })}
-                        />
-                        {errors.establishedYear && (
-                          <p className="error-text-color">
-                            Established year is required
-                          </p>
-                        )}
-
-                        {errors.establishedYear && (
-                          <p className="error-text-color">
-                            Established year is required
-                          </p>
-                        )}
-                      </Col>
-                    </Row>
                     <Row className="mt-3 mb-2">
                       <Col
                         className="d-block justify-content-center align-items-center mt-3"
                         md={6}
-                        sm={12}
                       >
-                        <label className="mb-1">Password</label>
-                        <div>
-                          <input
-                            className="input1"
-                            type={passwordShown ? "text" : "password"}
-                            {...register("password", { required: true })}
-                          />
-                          <FontAwesomeIcon
-                            icon={passwordShown ? faEye : faEyeSlash}
-                            onClick={() => handlePasswordShow()}
-                            style={{
-                              cursor: "pointer",
-                              color: "black",
-                              marginLeft: "82%",
-                              position: "relative",
-                              top: "-24px",
-                            }}
-                          />
-                          {errors.password && (
-                            <p
-                              className="error-text-color"
-                              style={{ marginTop: "-23px" }}
-                            >
-                              password is required
-                            </p>
-                          )}
-                        </div>
+                        <label className="mb-1">PAN Number</label>
+
+                        <input
+                          className="input"
+                          {...register("pan", {
+                            minLength: 10,
+                            maxLength: 10,
+                            required: true,
+                          })}
+                        />
+                        {errors.pan?.type === "required" && (
+                          <p className="error-text-color">
+                            PAN Number is required
+                          </p>
+                        )}
+                        {errors.pan?.type === "minLength" && (
+                          <p className="error-text-color">
+                            minimum 10 character is required
+                          </p>
+                        )}
+                        {errors.pan?.type === "maxLength" && (
+                          <p className="error-text-color">
+                            maximum 10 character is required
+                          </p>
+                        )}
                       </Col>
-                    </Row> */}
+                      <Col
+                        className="d-block justify-content-center align-items-center mt-3"
+                        md={6}
+                      >
+                        <label className="mb-1">Aadhar number</label>
+                        <input
+                          type="number"
+                          className="input"
+                          {...register("aadhar", {
+                            minLength: 12,
+                            maxLength: 12,
+                            required: true,
+                          })}
+                        />
+                        {errors.aadhar?.type === "required" && (
+                          <p className="error-text-color">
+                            Aadhar Number is required
+                          </p>
+                        )}
+                        {errors.aadhar?.type === "minLength" && (
+                          <p className="error-text-color">
+                            minimum 12 number is required
+                          </p>
+                        )}
+                        {errors.aadhar?.type === "maxLength" && (
+                          <p className="error-text-color">
+                            maximum 12 number is required
+                          </p>
+                        )}
+                      </Col>
+                    </Row>
+
                     <div className="d-flex justify-content-end mt-2">
                       <Button
                         className="login-button"
@@ -1152,4 +1130,4 @@ function AdvisorSignup() {
   );
 }
 
-export default AdvisorSignup;
+export default AdvisorSign;
