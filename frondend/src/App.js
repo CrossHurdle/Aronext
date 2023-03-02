@@ -44,6 +44,10 @@ import BgvRoutes from "./Routes/BgvRoutes";
 import BgvDashboard from "./Pages/Bgv/Dashboard";
 import AuditorRoutes from "./Routes/Auditor";
 import AuditorDefaultLayout from "./Pages/Auditor/DefaultLayout/index";
+// import AccountantDefaultLayout from "./Pages/Accountant/DefaultLayout/Index";
+// import AccoutantDashboard from "./Routes/AccoutantDashboard";
+import AccountantDefaultLayout from "./Pages/Accountent/DefaultLayout/Index";
+import AccoutantRoutes from "./Routes/AccoutantDashboard";
 
 const App = () => {
   return (
@@ -95,6 +99,11 @@ const App = () => {
         </Route>
         <Route path="/auditor" element={<AuditorDefaultLayout />}>
           {AuditorRoutes.map(({ path, element: Ele }, index) => (
+            <Route key={index} path={path} element={Ele} />
+          ))}
+        </Route>
+        <Route path="/accoutant" element={<AccountantDefaultLayout />}>
+          {AccoutantRoutes.map(({ path, element: Ele }, index) => (
             <Route key={index} path={path} element={Ele} />
           ))}
         </Route>
