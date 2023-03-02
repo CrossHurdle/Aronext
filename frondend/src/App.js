@@ -49,6 +49,8 @@ import AuditorDefaultLayout from "./Pages/Auditor/DefaultLayout/index";
 import AccountantDefaultLayout from "./Pages/Accountent/DefaultLayout/Index";
 import AccoutantRoutes from "./Routes/AccoutantDashboard";
 import Userregistration from "./Pages/Registration/Userregistration";
+import BusinessRoutes from "./Routes/BusinessRoutes";
+import BusinessDefaultLayout from "./Pages/BusinessAdvisor/DefaultLayout/Index";
 
 const App = () => {
   return (
@@ -106,6 +108,11 @@ const App = () => {
         </Route>
         <Route path="/accoutant" element={<AccountantDefaultLayout />}>
           {AccoutantRoutes.map(({ path, element: Ele }, index) => (
+            <Route key={index} path={path} element={Ele} />
+          ))}
+        </Route>
+        <Route path="/businessAdvisor" element={<BusinessDefaultLayout />}>
+          {BusinessRoutes.map(({ path, element: Ele }, index) => (
             <Route key={index} path={path} element={Ele} />
           ))}
         </Route>
