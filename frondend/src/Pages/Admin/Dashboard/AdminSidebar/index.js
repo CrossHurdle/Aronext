@@ -20,7 +20,18 @@ function DefaultLayout() {
   const UserName = localStorage.getItem("name");
 
   const [logout, setLogout] = useState(false);
-
+  // useEffect(() => {
+  //   if (!localStorage.getItem("USER_AUTH_STATE")) navigate("/adminlogin");
+  // }, [logout]);
+  // const logoutHandler = (e) => {
+  //   e.preventDefault();
+  //   localStorage.removeItem("USER_AUTH_STATE");
+  //   localStorage.removeItem("Role");
+  //   localStorage.removeItem("id");
+  //   localStorage.removeItem("admin-token");
+  //   localStorage.removeItem("name");
+  //   setLogout(true);
+  // };
   return (
     <>
       <div>

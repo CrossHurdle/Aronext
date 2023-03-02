@@ -121,7 +121,8 @@ const Login = () => {
                 style={{ fontWeight: "bold", fontFamily: "sans-serif" }}
               >
                 {/* {`${stateCheck + " " + "Login"}`} */}
-                <span style={{ color: "red" }}> FERIL </span>&nbsp; Login
+                {/* <span style={{ color: "red" }}> FERIL </span>&nbsp; Login */}
+                <span style={{ color: "#1568ba" }}> AroNext </span>&nbsp; Login
               </h4>
               <div className="maincontent ">
                 <h5 style={{ fontSize: "16px" }}>Don't have an account ?</h5>
@@ -183,13 +184,22 @@ const Login = () => {
                 </div>
               </div>
               <Divider className="divider-content">Or</Divider>
-              <Link
+              {/* <Link
                 to="https://accounts.google.com/ServiceLogin/signinchooser?service=mail&passive=1209600&osid=1&continue=https%3A%2F%2Fmail.google.com%2Fmail%2Fu%2F0%2F&followup=https%3A%2F%2Fmail.google.com%2Fmail%2Fu%2F0%2F&emr=1&flowName=GlifWebSignIn&flowEntry=ServiceLogin"
                 className="google-content"
               >
                 <img className="google-icon" src={google}></img>
                 <span className="google-span">Sign in with Google</span>
-              </Link>
+              </Link> */}
+              <center className="GoogleIcon_Center">
+                <Link
+                  to="https://accounts.google.com/ServiceLogin/signinchooser?service=mail&passive=1209600&osid=1&continue=https%3A%2F%2Fmail.google.com%2Fmail%2Fu%2F0%2F&followup=https%3A%2F%2Fmail.google.com%2Fmail%2Fu%2F0%2F&emr=1&flowName=GlifWebSignIn&flowEntry=ServiceLogin"
+                  className="google-content"
+                >
+                  <img className="google-icon" src={google}></img>
+                  <span className="google-span">Sign in with Google</span>
+                </Link>
+              </center>
             </Card>
           </Col>
         </Row>

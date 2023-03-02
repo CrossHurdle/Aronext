@@ -76,6 +76,18 @@ const App = () => {
             <Route key={index} path={path} element={Ele} />
           ))}
         </Route>
+
+        <Route path="/student" element={<DefaultLayouts />} />
+        {/* <Route
+          path="/admin"
+          element={
+            <ProtectedRoute component={Dashboard} token={"admin-token"} />
+          }
+        > */}
+        {/* {AdminRoutes.map(({ path, element: Ele }, index) => (
+            <Route key={index} path={path} element={Ele} />
+          ))}
+        </Route> */}
         <Route path="/student" element={<DefaultLayouts />}>
           {StudentRoutes.map(({ path, element: Ele }, index) => (
             <Route key={index} path={path} element={Ele} />
@@ -101,6 +113,19 @@ const App = () => {
             <Route key={index} path={path} element={Ele} />
           ))}
         </Route>
+        {/* <Route
+          path="/professional"
+          element={
+            <ProtectedRoute
+              component={ProfessionalDefaultLayout}
+              token={"pro_token"}
+            />
+          }
+        >
+          {EmployeeRoutes.map(({ path, element: Ele }, index) => (
+            <Route key={index} path={path} element={Ele} />
+          ))}
+        </Route> */}
         {/* <Route
           path="/employer"
           element={

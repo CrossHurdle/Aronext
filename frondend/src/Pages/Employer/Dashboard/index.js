@@ -24,19 +24,19 @@ function Dashboard() {
 
   const UserName = localStorage.getItem("name");
   const [logout, setLogout] = React.useState(false);
-  React.useEffect(() => {
-    if (!localStorage.getItem("USER_AUTH_STATE")) navigate("/login");
-  }, [logout]);
-  const logoutHandler = (e) => {
-    e.preventDefault();
-    localStorage.removeItem("USER_AUTH_STATE");
-    localStorage.removeItem("role");
-    localStorage.removeItem("id");
-    localStorage.removeItem("name");
-    localStorage.removeItem("emplo-token");
-    localStorage.removeItem("email");
-    setLogout(true);
-  };
+  // React.useEffect(() => {
+  //   if (!localStorage.getItem("USER_AUTH_STATE")) navigate("/login");
+  // }, [logout]);
+  // const logoutHandler = (e) => {
+  //   e.preventDefault();
+  //   localStorage.removeItem("USER_AUTH_STATE");
+  //   localStorage.removeItem("role");
+  //   localStorage.removeItem("id");
+  //   localStorage.removeItem("name");
+  //   localStorage.removeItem("emplo-token");
+  //   localStorage.removeItem("email");
+  //   setLogout(true);
+  // };
 
   // if (window.matchMedia("max-width:440px").matches) {
   //   setCollapsed(!collapsed);
@@ -44,7 +44,7 @@ function Dashboard() {
 
   return (
     <div>
-      <div onChange={handleChange}>
+      <div>
         <div className="dashboards__headerNavs">
           <div className="dashboards__headerNavs--container">
             <div>
@@ -62,7 +62,7 @@ function Dashboard() {
               />
             </div>
             <div>
-              <div onClick={logoutHandler}>
+              <div>
                 <Link to="/login" className="navMenus">
                   Logout
                 </Link>
