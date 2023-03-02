@@ -51,7 +51,7 @@ function Defaultlayout() {
               />
             </div>
             <div>
-              <div >
+              <div>
                 <Link to="/login" className="navMenus">
                   Logout
                 </Link>

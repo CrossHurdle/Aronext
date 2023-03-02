@@ -55,7 +55,9 @@ function DefaultLayout() {
                   {UserName}
                 </span> */}
               </div>
-              <div>
+              <div
+              // onClick={logoutHandler}
+              >
                 <Link to="/login" className="navMenus">
                   Logout
                 </Link>

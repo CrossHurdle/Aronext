@@ -26,7 +26,7 @@ function Defaultlayout() {
 
   const UserName = localStorage.getItem("name");
 
-  // const [logout, setLogout] = React.useState(false);
+  const [logout, setLogout] = React.useState(false);
   // React.useEffect(() => {
   //   if (!localStorage.getItem("USER_AUTH_STATE")) navigate("/login");
   // }, [logout]);

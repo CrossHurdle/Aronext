@@ -1,74 +1,63 @@
 import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "../../Components/Css/signup.css";
-import { Button, Col, Row, Form, ToastContainer, Toast } from "react-bootstrap";
+import "../../../Components/Css/signup.css";
+import { Button, Col, Row, Toast, ToastContainer } from "react-bootstrap";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { MultiSelect } from "primereact/multiselect";
-import "primeicons/primeicons.css";
-import "primereact/resources/themes/lara-light-indigo/theme.css";
-import "primereact/resources/primereact.css";
-import Api from "../../Api";
+import Api from "../../../Api";
 import { Dropdown } from "primereact";
 import { useNavigate } from "react-router-dom";
+import "./advisor.css";
 
-function Studentsign(props) {
-  const [role, setrole] = useState(props.role);
+function AdvisorSignup() {
   const [step, setstep] = useState("first");
-  const [gender, setGender] = useState("");
-  const [maritalStatus, setMaritalStatus] = useState("");
-  const [details, setDetails] = useState("");
-  const [show, setShow] = useState(false);
   const [countryList, setcountryList] = useState([]);
-  const [countryValue, setCountryValue] = useState();
+  // const [countryValue, setCountryValue] = useState();
   const [stateList, setstateList] = useState([]);
-  const [stateValue, setStateValue] = useState();
+  // const [stateValue, setStateValue] = useState();
   const [districtList, setdistrictList] = useState([]);
   const [districtValue, setDistrictValue] = useState();
   const [cityvalue, setCityValue] = useState();
+  const [statevalue, setStateValue] = useState();
+  const [countryvalue, setCountryValue] = useState();
+  const [details, setDetails] = useState("");
+  const [show, setShow] = useState(false);
+  const [industryType, setIndustryType] = useState("");
   const [passwordShown, setpasswordShown] = useState(false);
-
-  const navigate = useNavigate();
-
+  const [msg, setMsg] = useState("");
+  const [error, setError] = useState("");
+  const [pan, setPan] = useState();
+  const [isSubmit, setIsSubmit] = useState(false);
   const handlePasswordShow = () => {
     setpasswordShown(!passwordShown);
   };
 
-  const onGender = (e) => {
-    setGender(e.value);
-  };
-  const onmaritalStatus = (e) => {
-    setMaritalStatus(e.value);
+  const onindustryType = (e) => {
+    setIndustryType(e.value);
   };
 
-  const genderselect = [
-    { label: "Male", value: "Male" },
-    { label: "Female", value: "Female" },
-    { label: "Other", value: "Other" },
-  ];
-
-  const maritalStatusselect = [
-    { label: "single", value: "single" },
-    { label: "married", value: "married" },
-    { label: "Other", value: "Other" },
-  ];
-
-  const city = [
-    { label: "Cumbum", value: "Cumbum" },
+  const Cityselect = [
     { label: "Theni", value: "Theni" },
-    { label: "Bodi", value: "Bodi" },
+    { label: "Chennai", value: "Chennai" },
+    { label: "Tiruvannamalai", value: "Tiruvannamalai" },
   ];
-
-  const [resres, setResres] = useState({
-    status: null,
-    message: null,
-  });
+  const Stateselect = [
+    { label: "Tamilnadu", value: "Tamilnadu" },
+    { label: "Andrapradesh", value: "Andrapradesh" },
+    { label: "Karnataka", value: "Karnataka" },
+  ];
+  const Countryselect = [
+    { label: "India", value: "India" },
+    { label: "Srilanka", value: "Srilanka" },
+    { label: "US", value: "US" },
+  ];
 
   const {
     register,
     handleSubmit,
     formState: { errors },
+
     getValues,
   } = useForm();
 
@@ -77,9 +66,16 @@ function Studentsign(props) {
   };
 
   const onSubmit1 = (data) => {
+    setIsSubmit(true);
     handleFormSubmit();
     setShow(true);
   };
+
+  const navigate = useNavigate();
+  const [resres, setResres] = useState({
+    status: null,
+    message: null,
+  });
 
   useEffect(() => {
     addDataList();
@@ -87,21 +83,26 @@ function Studentsign(props) {
   }, []);
 
   const addDataList = () => {
-    Api.get(`/signup/`).then((resp) => {
+    Api.get(`employer`).then((resp) => {
       setDetails(resp.data.data);
     });
   };
 
+  const industryTypeselect = [
+    { label: "IT/Software", value: "IT/Software" },
+    { label: "Marketing", value: "Marketing" },
+    { label: "Other", value: "Other" },
+  ];
+
   const handleFormSubmit = async () => {
-    let userDetails = {
-      role: "student",
-      firstName: getValues().firstName,
-      LastName: getValues().lastName,
+    const userDetails = {
+      role: "employer",
+      companyName: getValues().companyName,
+      employerName: getValues().employerName,
       email: getValues().mail,
-      gender: getValues().gender,
-      maritalStatus: getValues().maritalStatus,
+      establishedYear: getValues().establishedYear,
+      industryType: getValues().industryType,
       phone: getValues().phone,
-      dob: getValues().dob,
       password: getValues().password,
       country: getValues().country,
       state: getValues().State,
@@ -109,29 +110,31 @@ function Studentsign(props) {
       city: getValues().City,
       address: getValues().address,
       pincode: getValues().pincode,
+      status: getValues().status,
     };
-
-    Api.post(`signup/create`, userDetails)
-
+    await Api.post(`employer/Employer_create`, userDetails)
       .then((res) => {
+        setMsg({
+          status: res.data?.status,
+          message: res.data?.message,
+        });
         setResres({
           status: res.data?.status,
           message: res.data?.message,
         });
-
         localStorage.setItem("userId", res.data.data._id);
         setTimeout(() => {
-          navigate("/");
+          // navigate("/");
         }, 10000);
+        setIsSubmit(false);
       })
       .catch((err) => {
-        setResres({
+        setError({
           status: err?.response.data?.status,
           message: err?.response.data?.message,
         });
       });
   };
-
   const getCountry = async () => {
     await Api.get("country/getallcountry").then((res) => {
       setcountryList(res.data.data);
@@ -139,7 +142,6 @@ function Studentsign(props) {
   };
 
   const getState = (country_id) => {
-    console.log("stateList", country_id);
     setCountryValue(country_id);
     Api.get(`state/stateById/${country_id}`).then((res) => {
       setstateList(res.data.data);
@@ -157,27 +159,38 @@ function Studentsign(props) {
     <div>
       <div>
         <div className="px-5">
-          <ToastContainer position="top-end">
-            <Toast onClose={() => setShow(false)} show={show} autoClose={13000}>
+          <ToastContainer
+            className="bg-light"
+            position="top-end"
+            style={{ zIndex: 100000 }}
+          >
+            <Toast
+              onClose={() => setShow(false)}
+              show={show}
+              delay={3000}
+              autohide
+            >
               <Toast.Header>
-                <strong className="me-auto text-success">Success</strong>
+                <strong
+                  className={`me-auto text-${
+                    resres?.status === "Success" ? "success" : "danger"
+                  }`}
+                >
+                  {resres?.status}
+                  {console.log("resres", resres)}
+                </strong>
               </Toast.Header>
-              <Toast.Body className="toast-message">
-                Welcome to JOBMARS Family. <br />
-                please check your email.
-              </Toast.Body>
+              <Toast.Body>{resres?.message}</Toast.Body>
             </Toast>
           </ToastContainer>
           <h4>
             {step === "first"
-              ? "Personal details"
+              ? "Advisor details"
               : step === "second"
               ? "Address"
               : step === "third"
               ? "Education"
-              : step === "fourth"
-              ? "Skills"
-              : step === "fifth" && "Details"}
+              : step === "fourth" && "Skills"}
           </h4>
           {step === "first" ? (
             <div>
@@ -192,18 +205,18 @@ function Studentsign(props) {
                         <label className="mb-1">First Name</label>
                         <input
                           className="input"
-                          {...register("firstName", {
-                            required: true,
-                            pattern: /^[A-Za-z]+$/i,
-                          })}
+                          {...register("companyName", { required: true })}
                         />
-                        {errors.firstName?.type === "required" && (
+                        <input
+                          className="input"
+                          hidden
+                          defaultValue="Not Approved"
+                          {...register("status", { required: false })}
+                        />
+                        {errors.companyName && (
                           <p className="error-text-color">
                             First Name is required
                           </p>
-                        )}
-                        {errors?.firstName?.type === "pattern" && (
-                          <p className="error-text-color">characters only</p>
                         )}
                       </Col>
                       <Col
@@ -213,14 +226,14 @@ function Studentsign(props) {
                         <label className="mb-1">Last Name</label>
                         <input
                           className="input"
-                          {...register("lastName", {
+                          {...register("employerName", {
                             required: true,
                             pattern: /^[A-Za-z]+$/i,
                           })}
                         />
-                        {errors.lastName?.type === "required" && (
+                        {errors.employerName?.type === "required" && (
                           <p className="error-text-color">
-                            Last Name is required
+                            Employer Name is required
                           </p>
                         )}
                         {errors?.lastName?.type === "pattern" && (
@@ -228,8 +241,27 @@ function Studentsign(props) {
                         )}
                       </Col>
                     </Row>
-
                     <Row className="mt-3 mb-2">
+                      <Col
+                        className="d-block justify-content-center align-items-center  mt-3 "
+                        md={6}
+                        sm={12}
+                      >
+                        <label className="mb-1">Email ID</label>
+                        <input
+                          className="input"
+                          {...register("mail", {
+                            required: true,
+                            pattern: {
+                              value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                              message: "invalid email address",
+                            },
+                          })}
+                        />
+                        {errors.mail && (
+                          <p className="error-text-color">Email is required</p>
+                        )}
+                      </Col>
                       <Col
                         className="d-block justify-content-center align-items-center  mt-3"
                         md={6}
@@ -261,131 +293,70 @@ function Studentsign(props) {
                           </p>
                         )}
                       </Col>
-                      <Col
-                        className="d-block justify-content-center align-items-center  mt-3 "
-                        md={6}
-                        sm={12}
-                      >
-                        <label className="mb-1">Email ID</label>
-                        <input
-                          className="input"
-                          {...register("mail", {
-                            required: true,
-                            pattern: {
-                              value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                              message: "invalid email address",
-                            },
-                          })}
-                        />
-                        {errors.mail && (
-                          <p className="error-text-color">Email is required</p>
-                        )}
-                      </Col>
                     </Row>
                     <Row className="mt-3 mb-2">
-                      <Col className="d-block justify-content-center align-items-center  mt-3">
-                        <label className="mb-1">Gender</label>
-                        <Dropdown
-                          filter
-                          name="gender"
-                          className="input1"
-                          value={gender}
-                          options={genderselect}
-                          onChange={onGender}
-                          {...register("gender", {
-                            required: true,
-                            onChange: (e) => {
-                              setGender(e.target.value);
-                            },
-                          })}
-                        />
-                        {errors.gender && (
-                          <p className="error-text-color">gender is required</p>
-                        )}
-                      </Col>
                       <Col
                         className="d-block justify-content-center align-items-center mt-3"
                         md={6}
-                        sm={12}
                       >
-                        <label className="mb-1">Marital Status</label>
-                        <Dropdown
-                          filter
-                          name="maritalStatus"
-                          className="input1"
-                          value={maritalStatus}
-                          options={maritalStatusselect}
-                          onChange={onmaritalStatus}
-                          {...register("maritalStatus", {
+                        <label className="mb-1">PAN Number</label>
+
+                        <input
+                          className="input"
+                          {...register("pan", {
+                            minLength: 10,
+                            maxLength: 10,
                             required: true,
-                            onChange: (e) => {
-                              setMaritalStatus(e.target.value);
-                            },
                           })}
                         />
-                        {errors.maritalStatus && (
+                        {errors.pan?.type === "required" && (
                           <p className="error-text-color">
-                            Marital Status is required
+                            PAN Number is required
                           </p>
                         )}
-                      </Col>
-                    </Row>
-                    <Row className="mt-3 mb-2">
-                      <Col
-                        className="d-block justify-content-center align-items-center  mt-3 form-group"
-                        md={6}
-                        sm={12}
-                      >
-                        <label className="mb-1" htmlFor="dateOfBirth">
-                          Date of Birth
-                        </label>
-                        <input
-                          type="date"
-                          className="input"
-                          {...register("dob", {
-                            required: true,
-                          })}
-                        />
-                        {errors.dob && (
+                        {errors.pan?.type === "minLength" && (
                           <p className="error-text-color">
-                            Date of birth is required
+                            minimum 10 character is required
+                          </p>
+                        )}
+                        {errors.pan?.type === "maxLength" && (
+                          <p className="error-text-color">
+                            maximum 10 character is required
                           </p>
                         )}
                       </Col>
                       <Col
                         className="d-block justify-content-center align-items-center mt-3"
                         md={6}
-                        sm={12}
                       >
-                        <label className="mb-1">Password</label>
-                        <div>
-                          <input
-                            className="input1"
-                            type={passwordShown ? "text" : "password"}
-                            {...register("password", { required: true })}
-                          />
-                          <FontAwesomeIcon
-                            icon={passwordShown ? faEye : faEyeSlash}
-                            onClick={() => handlePasswordShow()}
-                            style={{
-                              cursor: "pointer",
-                              color: "black",
-                              marginLeft: "82%",
-                              position: "relative",
-                              top: "-24px",
-                            }}
-                          />
-                          {errors.password && (
-                            <p
-                              className="error-text-color"
-                              style={{ marginTop: "-23px" }}
-                            >
-                              password is required
-                            </p>
-                          )}
-                        </div>
+                        <label className="mb-1">Aadhar number</label>
+                        <input
+                          type="number"
+                          className="input"
+                          {...register("aadhar", {
+                            minLength: 12,
+                            maxLength: 12,
+                            required: true,
+                          })}
+                        />
+                        {errors.aadhar?.type === "required" && (
+                          <p className="error-text-color">
+                            Aadhar Number is required
+                          </p>
+                        )}
+                        {errors.aadhar?.type === "minLength" && (
+                          <p className="error-text-color">
+                            minimum 12 number is required
+                          </p>
+                        )}
+                        {errors.aadhar?.type === "maxLength" && (
+                          <p className="error-text-color">
+                            maximum 12 number is required
+                          </p>
+                        )}
                       </Col>
                     </Row>
+
                     <div className="d-flex justify-content-end mt-2">
                       <Button
                         className="login-button"
@@ -414,12 +385,12 @@ function Studentsign(props) {
                         <Dropdown
                           filter
                           className="input1"
-                          value={countryValue}
-                          options={countryList}
-                          {...register("country", { required: true })}
-                          optionLabel={"name"}
-                          optionValue={"id"}
-                          onChange={(e) => getState(e.value)}
+                          value={countryvalue}
+                          options={Countryselect}
+                          {...register("City", { required: true })}
+                          // optionLabel={"CityName"}
+                          // optionValue={"_id"}
+                          onChange={(e) => setCountryValue(e.value)}
                         />
                         {errors.country && (
                           <p className="error-text-color">
@@ -436,12 +407,12 @@ function Studentsign(props) {
                         <Dropdown
                           filter
                           className="input1"
-                          value={stateValue}
-                          options={stateList}
+                          value={statevalue}
+                          options={Stateselect}
                           {...register("State", { required: true })}
-                          optionLabel={"name"}
-                          optionValue={"id"}
-                          onChange={(e) => getDistrict(e.value)}
+                          // optionLabel={"CityName"}
+                          // optionValue={"_id"}
+                          onChange={(e) => setStateValue(e.value)}
                         />
                         {errors.State && (
                           <p className="error-text-color">State is required</p>
@@ -455,22 +426,19 @@ function Studentsign(props) {
                         sm={12}
                         md={6}
                       >
-                        <label className="mb-1">District</label>
+                        <label className="mb-1">City</label>
                         <Dropdown
                           filter
                           className="input1"
-                          value={districtValue}
-                          options={districtList}
-                          {...register("district", { required: true })}
-                          optionLabel={"name"}
-                          optionValue={"id"}
-                          onChange={(e) => setDistrictValue(e.value)}
+                          value={cityvalue}
+                          options={Cityselect}
+                          {...register("City", { required: true })}
+                          // optionLabel={"CityName"}
+                          // optionValue={"_id"}
+                          onChange={(e) => setCityValue(e.value)}
                         />
-
-                        {errors.district && (
-                          <p className="error-text-color">
-                            District is required
-                          </p>
+                        {errors.City && (
+                          <p className="error-text-color">City is required</p>
                         )}
                       </Col>
 
@@ -479,19 +447,13 @@ function Studentsign(props) {
                         md={6}
                         sm={12}
                       >
-                        <label className="mb-1">City</label>
-                        <Dropdown
-                          filter
-                          className="input1"
-                          value={cityvalue}
-                          options={city}
-                          {...register("City", { required: true })}
-                          // optionLabel={"CityName"}
-                          // optionValue={"_id"}
-                          onChange={(e) => setCityValue(e.value)}
+                        <label className="mb-1">Street</label>
+                        <input
+                          className="input"
+                          {...register("street", { required: true })}
                         />
-                        {errors.City && (
-                          <p className="error-text-color">City is required</p>
+                        {errors.address && (
+                          <p className="error-text-color">Area is required</p>
                         )}
                       </Col>
                     </Row>
@@ -507,12 +469,9 @@ function Studentsign(props) {
                           {...register("address", { required: true })}
                         />
                         {errors.address && (
-                          <p className="error-text-color">
-                            Address is required
-                          </p>
+                          <p className="error-text-color">Area is required</p>
                         )}
                       </Col>
-
                       <Col
                         className="d-block justify-content-center align-items-center mt-3 "
                         md={6}
@@ -520,8 +479,8 @@ function Studentsign(props) {
                       >
                         <label className="mb-1">Pincode</label>
                         <input
-                          type="number"
                           className="input"
+                          type="number"
                           {...register("pincode", {
                             required: true,
                             minLength: 6,
@@ -543,6 +502,7 @@ function Studentsign(props) {
                     </Row>
                   </div>
                   <br />
+
                   <div className="d-flex justify-content-between mt-3 mb-2">
                     <Button
                       className="login-button"
@@ -551,9 +511,11 @@ function Studentsign(props) {
                     >
                       Back
                     </Button>
+
                     <Button
-                      className="login-button"
+                      className={isSubmit ? "bg-success" : "login-button"}
                       variant="primary"
+                      // disabled={isSubmit}
                       onClick={handleSubmit(onSubmit1)}
                     >
                       Submit
@@ -569,4 +531,4 @@ function Studentsign(props) {
   );
 }
 
-export default Studentsign;
+export default AdvisorSignup;

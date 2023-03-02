@@ -54,20 +54,18 @@ function AdminLogin() {
           status: response.data?.status,
           message: response.data?.message,
         });
-        if (response.data.token) {
-          const token = response.data.token;
-          const name = response.data.userName;
-          const regid = response.data.data.RegistrationId;
+        // if (response.data.token) {
+        //   const token = response.data.token;
+        //   const name = response.data.userName;
 
-          localStorage.setItem("USER_AUTH_STATE", true);
-          localStorage.setItem("Role", "admin");
-          localStorage.setItem("admin-token", token);
-          localStorage.setItem("name", name);
-          localStorage.setItem("regid", regid);
+        //   localStorage.setItem("USER_AUTH_STATE", true);
+        //   localStorage.setItem("Role", "admin");
+        //   localStorage.setItem("admin-token", token);
+        //   localStorage.setItem("name", name);
 
-          navigate("/admin");
-          sessionStorage.setItem("USER_AUTH_STATE", true);
-        }
+        //   navigate("/admin");
+        //   sessionStorage.setItem("USER_AUTH_STATE", true);
+        // }
       })
       .catch((err) => {
         setResres({

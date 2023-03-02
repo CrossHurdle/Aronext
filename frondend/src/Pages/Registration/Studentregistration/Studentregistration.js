@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "../../Components/Css/signup.css";
+import "../../../Components/Css/signup.css";
 import { Button, Col, Row, Form, ToastContainer, Toast } from "react-bootstrap";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -9,11 +9,11 @@ import { MultiSelect } from "primereact/multiselect";
 import "primeicons/primeicons.css";
 import "primereact/resources/themes/lara-light-indigo/theme.css";
 import "primereact/resources/primereact.css";
-import Api from "../../Api";
+import Api from "../../../Api";
 import { Dropdown } from "primereact";
 import { useNavigate } from "react-router-dom";
 
-function Studentsign(props) {
+function Studentsignup(props) {
   const [role, setrole] = useState(props.role);
   const [step, setstep] = useState("first");
   const [gender, setGender] = useState("");
@@ -569,4 +569,4 @@ function Studentsign(props) {
   );
 }
 
-export default Studentsign;
+export default Studentsignup;

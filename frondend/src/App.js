@@ -48,11 +48,13 @@ import AuditorDefaultLayout from "./Pages/Auditor/DefaultLayout/index";
 // import AccoutantDashboard from "./Routes/AccoutantDashboard";
 import AccountantDefaultLayout from "./Pages/Accountent/DefaultLayout/Index";
 import AccoutantRoutes from "./Routes/AccoutantDashboard";
+import Userregistration from "./Pages/Registration/Userregistration";
 
 const App = () => {
   return (
     <Suspense fallback={<h1>Loading</h1>}>
       <Routes>
+        <Route path="/userregistration" element={<Userregistration />} />
         <Route path="/" element={<Homepage />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup/:role" element={<Signup />} />

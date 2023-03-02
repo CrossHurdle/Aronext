@@ -13,12 +13,14 @@ import "./EmailStyle.css";
 function EmployerSignup() {
   const [step, setstep] = useState("first");
   const [countryList, setcountryList] = useState([]);
-  const [countryValue, setCountryValue] = useState();
+  // const [countryValue, setCountryValue] = useState();
   const [stateList, setstateList] = useState([]);
-  const [stateValue, setStateValue] = useState();
+  // const [stateValue, setStateValue] = useState();
   const [districtList, setdistrictList] = useState([]);
   const [districtValue, setDistrictValue] = useState();
   const [cityvalue, setCityValue] = useState();
+  const [statevalue, setStateValue] = useState();
+  const [countryvalue, setCountryValue] = useState();
   const [details, setDetails] = useState("");
   const [show, setShow] = useState(false);
   const [industryType, setIndustryType] = useState("");
@@ -39,6 +41,16 @@ function EmployerSignup() {
     { label: "Theni", value: "Theni" },
     { label: "Chennai", value: "Chennai" },
     { label: "Tiruvannamalai", value: "Tiruvannamalai" },
+  ];
+  const Stateselect = [
+    { label: "Tamilnadu", value: "Tamilnadu" },
+    { label: "Andrapradesh", value: "Andrapradesh" },
+    { label: "Karnataka", value: "Karnataka" },
+  ];
+  const Countryselect = [
+    { label: "India", value: "India" },
+    { label: "Srilanka", value: "Srilanka" },
+    { label: "US", value: "US" },
   ];
 
   const {
@@ -173,7 +185,7 @@ function EmployerSignup() {
           </ToastContainer>
           <h4>
             {step === "first"
-              ? "Employer details"
+              ? "Auditor details"
               : step === "second"
               ? "Address"
               : step === "third"
@@ -190,7 +202,7 @@ function EmployerSignup() {
                         className="d-block justify-content-center align-items-center mt-3"
                         md={6}
                       >
-                        <label className="mb-1">Company Name</label>
+                        <label className="mb-1">First Name</label>
                         <input
                           className="input"
                           {...register("companyName", { required: true })}
@@ -211,7 +223,7 @@ function EmployerSignup() {
                         className="d-block justify-content-center align-items-center mt-3"
                         md={6}
                       >
-                        <label className="mb-1">Employer Name</label>
+                        <label className="mb-1">Last Name</label>
                         <input
                           className="input"
                           {...register("employerName", {
@@ -235,19 +247,20 @@ function EmployerSignup() {
                         md={6}
                         sm={12}
                       >
-                        <label className="mb-1">Email ID</label>
+                        <label className="mb-1">Proffession</label>
                         <input
                           className="input"
                           {...register("mail", {
                             required: true,
                             pattern: {
-                              value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                              message: "invalid email address",
+                              value: /^[A-Za-z]+$/i,
                             },
                           })}
                         />
                         {errors.mail && (
-                          <p className="error-text-color">Email is required</p>
+                          <p className="error-text-color">
+                            Proffession is required
+                          </p>
                         )}
                       </Col>
                       <Col
@@ -282,7 +295,7 @@ function EmployerSignup() {
                         )}
                       </Col>
                     </Row>
-                    <Row className="mt-3 mb-2">
+                    {/* <Row className="mt-3 mb-2">
                       <Col className="d-block justify-content-center align-items-center  mt-3">
                         <label className="mb-1">Industry Type</label>
                         <Dropdown
@@ -365,7 +378,7 @@ function EmployerSignup() {
                           )}
                         </div>
                       </Col>
-                    </Row>
+                    </Row> */}
                     <div className="d-flex justify-content-end mt-2">
                       <Button
                         className="login-button"
@@ -394,12 +407,12 @@ function EmployerSignup() {
                         <Dropdown
                           filter
                           className="input1"
-                          value={countryValue}
-                          options={countryList}
-                          {...register("country", { required: true })}
-                          optionLabel={"name"}
-                          optionValue={"id"}
-                          onChange={(e) => getState(e.value)}
+                          value={countryvalue}
+                          options={Countryselect}
+                          {...register("City", { required: true })}
+                          // optionLabel={"CityName"}
+                          // optionValue={"_id"}
+                          onChange={(e) => setCountryValue(e.value)}
                         />
                         {errors.country && (
                           <p className="error-text-color">
@@ -416,12 +429,12 @@ function EmployerSignup() {
                         <Dropdown
                           filter
                           className="input1"
-                          value={stateValue}
-                          options={stateList}
+                          value={statevalue}
+                          options={Stateselect}
                           {...register("State", { required: true })}
-                          optionLabel={"name"}
-                          optionValue={"id"}
-                          onChange={(e) => getDistrict(e.value)}
+                          // optionLabel={"CityName"}
+                          // optionValue={"_id"}
+                          onChange={(e) => setStateValue(e.value)}
                         />
                         {errors.State && (
                           <p className="error-text-color">State is required</p>
@@ -434,30 +447,6 @@ function EmployerSignup() {
                         className="d-block justify-content-center align-items-center mt-3"
                         sm={12}
                         md={6}
-                      >
-                        <label className="mb-1">District</label>
-                        <Dropdown
-                          filter
-                          className="input1"
-                          value={districtValue}
-                          options={districtList}
-                          {...register("district", { required: true })}
-                          optionLabel={"name"}
-                          optionValue={"id"}
-                          onChange={(e) => setDistrictValue(e.value)}
-                        />
-
-                        {errors.district && (
-                          <p className="error-text-color">
-                            District is required
-                          </p>
-                        )}
-                      </Col>
-
-                      <Col
-                        className="d-block justify-content-center align-items-center  mt-3 form-group"
-                        md={6}
-                        sm={12}
                       >
                         <label className="mb-1">City</label>
                         <Dropdown
@@ -472,6 +461,21 @@ function EmployerSignup() {
                         />
                         {errors.City && (
                           <p className="error-text-color">City is required</p>
+                        )}
+                      </Col>
+
+                      <Col
+                        className="d-block justify-content-center align-items-center  mt-3 form-group"
+                        md={6}
+                        sm={12}
+                      >
+                        <label className="mb-1">Street</label>
+                        <input
+                          className="input"
+                          {...register("street", { required: true })}
+                        />
+                        {errors.address && (
+                          <p className="error-text-color">Area is required</p>
                         )}
                       </Col>
                     </Row>
