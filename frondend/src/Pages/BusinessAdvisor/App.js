@@ -1,5 +1,5 @@
 import React, { Suspense } from "react";
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
@@ -7,6 +7,9 @@ import Login from "./Pages/Login";
 import Signup from "./Pages/Signup";
 import AdminLogin from "./Pages/Login/AdminLogin";
 import Homepage from "./Pages/Homepage";
+import BlogsPage from "./Pages/Blog/BlogsPage";
+import Blog from "./Pages/Blog";
+import CreateBlog from "./Pages/Blog/CreateBlog";
 import Employer from "./Pages/Employer/Dashboard";
 import AdminRoutes from "./Routes/AdminRoutes";
 import PrivacyPolicy from "./Components/Footer/PrivacyPolicy/index";
@@ -41,11 +44,13 @@ import BgvRoutes from "./Routes/BgvRoutes";
 import BgvDashboard from "./Pages/Bgv/Dashboard";
 import AuditorRoutes from "./Routes/Auditor";
 import AuditorDefaultLayout from "./Pages/Auditor/DefaultLayout/index";
+// import AccountantDefaultLayout from "./Pages/Accountant/DefaultLayout/Index";
+// import AccoutantDashboard from "./Routes/AccoutantDashboard";
 import AccountantDefaultLayout from "./Pages/Accountent/DefaultLayout/Index";
 import AccoutantRoutes from "./Routes/AccoutantDashboard";
 import Userregistration from "./Pages/Registration/Userregistration";
 import BusinessRoutes from "./Routes/BusinessRoutes";
-import BusinessDefaultLayout from "./Pages/BusinessAdvisor/DefaultLayout/Index";
+import businessDefaultLayout from "./Pages/BusinessAdvisor/DefaultLayout/Index";
 
 const App = () => {
   return (
@@ -65,7 +70,10 @@ const App = () => {
         <Route path="/career" element={<Career />} />
         <Route path="/client" element={<Client />} />
         <Route path="/contactus" element={<Contactus />} />
+        <Route path="/blog" element={<Blog />} />
         <Route path="/services" element={<Services />} />
+        <Route path="/blogsPage" element={<BlogsPage />} />
+        <Route path="/createblog" element={<CreateBlog />} />
         <Route path="*" element={<ErrorMessage />} />
         <Route path="/forgetpassword" element={<Forgetpassword />} />
         <Route path="/feedback" element={<Feedback />} />
@@ -78,11 +86,16 @@ const App = () => {
         </Route>
 
         <Route path="/student" element={<DefaultLayouts />} />
-        <Route path="/admin" element={<Dashboard />}>
-          {AdminRoutes.map(({ path, element: Ele }, index) => (
+        {/* <Route
+          path="/admin"
+          element={
+            <ProtectedRoute component={Dashboard} token={"admin-token"} />
+          }
+        > */}
+        {/* {AdminRoutes.map(({ path, element: Ele }, index) => (
             <Route key={index} path={path} element={Ele} />
           ))}
-        </Route>
+        </Route> */}
         <Route path="/student" element={<DefaultLayouts />}>
           {StudentRoutes.map(({ path, element: Ele }, index) => (
             <Route key={index} path={path} element={Ele} />
@@ -98,7 +111,7 @@ const App = () => {
             <Route key={index} path={path} element={Ele} />
           ))}
         </Route>
-        <Route path="/businessAdvisor" element={<BusinessDefaultLayout />}>
+        <Route path="/businessAdvisor" element={<businessDefaultLayout />}>
           {BusinessRoutes.map(({ path, element: Ele }, index) => (
             <Route key={index} path={path} element={Ele} />
           ))}

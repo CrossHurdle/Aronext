@@ -1,13 +1,13 @@
-import React from 'react';
-import HeaderNavBar from './HeaderNavbar';
-import Footer from './Footer';
+import React from "react";
+import HeaderNavBar from "./HeaderNavbar";
+import Footer from "./Footer";
 
-export default function Layout({children}) {
+export default function Layout({ children }) {
   return (
     <div>
-        <HeaderNavBar />
+      <HeaderNavBar />
       {children}
       <Footer />
     </div>
-  )
+  );
 }
